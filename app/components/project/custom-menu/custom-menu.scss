@@ -2,20 +2,36 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: space-around;
+
+  @include MOBILE{
+    flex-direction: column;
+  }
 
 
   &__item {
-    display: inline-block;
-    text-decoration: none;
+    @extend %MENU;
+    width: 100%;
+    text-align: center;
     @include is-burger(){
       display: block;
       margin: auto;
+    }
+
+    @include NOT-MOBILE{
+      &:nth-of-type(2){
+        margin-right: 10%;
+      }
+      &:nth-of-type(3){
+        margin-left: 10%;
+      }
     }
   }
 
   &__item-link {
     display: block;
-    margin: 0 1em;
+    text-decoration: none;
     @include is-burger(){
       margin: 1em auto;
       text-align: center;

@@ -3,6 +3,15 @@
 .custom-page {
   min-height: 100vh;
   position: relative;
-  height: 100%;
+  height: auto;
   @extend %DEFAULT;
+
+  @include DESKTOP{
+    width: vw(1200px);
+    margin: auto;
+  }
+}
+
+html{
+  background: $BASE-BG;
 }

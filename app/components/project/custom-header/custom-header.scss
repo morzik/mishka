@@ -10,6 +10,8 @@
       @content;
     }
   }
+  // width: vw(1200px);
+  // margin: auto;
 
   &__logo {
     position: absolute;
@@ -30,8 +32,7 @@
     float: right;
   }
   &__wrapper {
-    display: inline-block;
-    vertical-align: middle;
+    width: 100%;
     //opacity: 0;
     //transition: opacity .3s;
     //@include menu-visible(){

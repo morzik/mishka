@@ -1,0 +1,32 @@
+.p-index {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("p-index", $mod){
+      @content;
+    }
+  }
+
+
+  &__welcome-block{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: vw(568px);
+    width: 100%;
+    background: image("index/bg.jpg") no-repeat center / cover;
+
+    &:after{
+      content: '';
+      clear: both;
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: vw(57px);
+      width: 100%;
+      background: image("index/bottom-line.svg") no-repeat center / 101% auto;
+    }
+  }
+}
