@@ -17,6 +17,7 @@
     @include is-burger(){
       display: block;
       margin: auto;
+      box-shadow: 0 1px 0 rgba(1, 1, 1, 0.2);
     }
 
     @include NOT-MOBILE{

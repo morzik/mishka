@@ -30,16 +30,16 @@
       @include is-burger(){
         z-index: $z-burger-menu + 1;
 
-        display: block;
+        // display: block;
 
         > * {
           display: block;
-          height: 3px;
-          margin: 0 0 3px;
-          background: #000000;
-          &:last-child {
-            margin-bottom: 0;
-          }
+          // height: 3px;
+          // margin: 0 0 3px;
+          // background: #000000;
+          // &:last-child {
+          //   margin-bottom: 0;
+          // }
         }
       }
     }

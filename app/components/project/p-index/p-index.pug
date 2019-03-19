@@ -1,4 +1,22 @@
 mixin p-index(content, params)
   .p-index&attributes(attributes)
     .p-index__welcome-block
-      img(src=content.welcomeLogo)
+      img(src=content.welcomeLogo).p-index__welcome-block-image
+      .p-index__welcome-block-line
+        include bottom-line.svg
+    +p-index__info(content.info)
+
+
+mixin p-index__info(content, params)
+  .p-index__info&attributes(attributes)
+    h2.p-index__info-title!=content.title
+    .p-index__info-subtitle!=content.subtitle
+    .p-index__info-list
+      +pug-list(content.list, "p-index__item")
+
+mixin p-index__item(content, params)
+  .p-index__item&attributes(attributes)
+    h2.p-index__item-title!=content.title
+    .p-index__item-index - № #{content.index} -
+    .p-index__item-description!=content.description
+

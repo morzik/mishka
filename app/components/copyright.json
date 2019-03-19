@@ -33,6 +33,19 @@
   ],
 
   "pIndex":{
-    "welcomeLogo":"images/index/welcome.svg"
+    "welcomeLogo":"images/index/welcome.svg",
+    "info":{
+      "title":"СЕДОНА — небольшой городок в АРИЗОНЕ,  зАСЛУЖИвающий большего!",
+      "subtitle":"Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!",
+      "list":[
+        {
+          "title":"title",
+          "index":"1",
+          "description":"text",
+          "type":"left",
+          "image":"images/index/city.jpg"
+        }
+      ]
+    }
   }
 }

@@ -10,7 +10,7 @@
 }
 
 /**
- * 
+ *
  */
 %MENU {
   font-family: $PTSans;
@@ -20,12 +20,12 @@
   font-weight: bold;
   @include MOBILE {
     font-size: 18px;
-    line-height: 3;
+    line-height: 40px;
   }
 }
 
 /**
- * 
+ *
  */
 %H2 {
   font-family: $PTSans;
@@ -40,7 +40,7 @@
 }
 
 /**
- * 
+ *
  */
 %BUTTON {
   font-family: $PTSans;
@@ -52,7 +52,7 @@
 }
 
 /**
- * 
+ *
  */
 %HASHTAG {
   font-family: $PTSans;
