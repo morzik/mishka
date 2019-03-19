@@ -1,58 +1,60 @@
 .p-index {
-  // Константы
-  @mixin mod($mod) {
-    @include modifier("p-index", $mod){
-      @content;
+    // Константы
+    @mixin mod($mod) {
+        @include modifier("p-index", $mod) {
+            @content;
+        }
     }
-  }
-
-
-  &__welcome-block{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background: image("index/bg.jpg") no-repeat center / cover;
-
-
-    @include DESKTOP{
-      height: vw(518px);
+    &__welcome-block {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background: image("index/bg.jpg") no-repeat center / cover;
+        @include DESKTOP {
+            height: vw(518px);
+        }
+        @include MOBILE {
+            height: 389px;
+        }
     }
-    @include MOBILE{
-      height: 389px;
+    &__welcome-block-image {
+        @include DESKTOP {
+            width: vw(460px);
+        }
+        @include MOBILE {
+            width: 287px;
+        }
     }
-  }
-
-  &__welcome-block-image{
-    @include DESKTOP{
-      width: vw(460px);
+    &__welcome-block-line {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 57px;
+        overflow: hidden;
+        margin: auto;
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: block;
+            height: 101%;
+        }
+        @include DESKTOP {
+            height: vw(57px);
+        }
     }
-    @include MOBILE{
-      width: 287px;
+    &__info-title {
+        @extend %H2;
     }
-  }
-
-  &__welcome-block-line{
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 57px;
-    overflow: hidden;
-    margin: auto;
-    svg{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: block;
-      height: 101%;
+    &__info-title,
+    &__info-subtitle {
+        width: vw(500px);
+        margin: auto;
+        text-align: center;
     }
-
-    @include DESKTOP{
-      height: vw(57px);
-    }
-  }
 }
