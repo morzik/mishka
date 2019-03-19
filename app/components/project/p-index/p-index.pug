@@ -16,7 +16,20 @@ mixin p-index__info(content, params)
 
 mixin p-index__item(content, params)
   .p-index__item&attributes(attributes)
-    h2.p-index__item-title!=content.title
-    .p-index__item-index - № #{content.index} -
-    .p-index__item-description!=content.description
+    .p-index__item-info
+      h2.p-index__item-title!=content.title
+      .p-index__item-index - № #{content.index} -
+      .p-index__item-description!=content.description
+      if content.image
+        img(src=content.image).p-index__item-image
+    if content.more
+      .p-index__more-info
+        +pug-list(content.more, "p-index__more-item")
 
+
+mixin p-index__more-item(content, params)
+  .p-index__more-item&attributes(attributes)
+    .p-index__more-item-icon
+      img(src=content.icon)
+    .p-index__more-item-title!=content.title
+    .p-index__more-item-text!=content.text

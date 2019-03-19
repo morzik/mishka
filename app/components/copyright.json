@@ -1,51 +1,64 @@
 {
-  "og": {
-    "title": "<?= $share->text ?>",
-    "description": "<?= $share->description ?>",
-    "canonical_url": "<?= $share->canonical_url ?>",
-    "fb_app_id": "",
-    "image": {
-      "default": {
-        "val":"<?= base_url('/' . $share->image) ?>",
-        "width": 1200,
-        "height": 628
-      }
-    }
-  },
-
-  "menu":[
-    {
-      "label":"Главная",
-      "href":""
-    },
-    {
-      "label":"ФОТО И ВИДЕО",
-      "href":""
-    },
-    {
-      "label":"Форма отзыва",
-      "href":""
-    },
-    {
-      "label":"HTML Academy",
-      "href":""
-    }
-  ],
-
-  "pIndex":{
-    "welcomeLogo":"images/index/welcome.svg",
-    "info":{
-      "title":"СЕДОНА — небольшой городок в АРИЗОНЕ,  зАСЛУЖИвающий большего!",
-      "subtitle":"Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!",
-      "list":[
-        {
-          "title":"title",
-          "index":"1",
-          "description":"text",
-          "type":"left",
-          "image":"images/index/city.jpg"
+    "og": {
+        "title": "<?= $share->text ?>",
+        "description": "<?= $share->description ?>",
+        "canonical_url": "<?= $share->canonical_url ?>",
+        "fb_app_id": "",
+        "image": {
+            "default": {
+                "val": "<?= base_url('/' . $share->image) ?>",
+                "width": 1200,
+                "height": 628
+            }
         }
-      ]
+    },
+
+    "menu": [{
+            "label": "Главная",
+            "href": ""
+        },
+        {
+            "label": "ФОТО И ВИДЕО",
+            "href": ""
+        },
+        {
+            "label": "Форма отзыва",
+            "href": ""
+        },
+        {
+            "label": "HTML Academy",
+            "href": ""
+        }
+    ],
+
+    "pIndex": {
+        "welcomeLogo": "images/index/welcome.svg",
+        "info": {
+            "title": "СЕДОНА — небольшой городок в АРИЗОНЕ,  зАСЛУЖИвающий большего!",
+            "subtitle": "Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!",
+            "list": [{
+                "title": "title",
+                "index": "1",
+                "description": "text",
+                "type": "left",
+                "image": "images/index/city.jpg",
+                "more": [{
+                        "icon": "images/icons/house.svg",
+                        "title": "еда",
+                        "text": "text"
+                    },
+                    {
+                        "icon": "images/icons/burger.svg",
+                        "title": "еда",
+                        "text": "text"
+                    },
+                    {
+                        "icon": "images/icons/gift.svg",
+                        "title": "еда",
+                        "text": "text"
+                    }
+                ]
+            }]
+        }
     }
-  }
 }
