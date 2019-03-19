@@ -1,0 +1,42 @@
+##
+## Настройка задач сборки
+## https://docs.gitlab.com/ee/ci/yaml/
+##
+
+## минимальная сборка
+# image: node:alpine
+
+## в node:alpine нет программ для выливания по ftp, git и пр. Для этих задач лучше использовать node:latest
+image: node:latest
+
+stages:
+  - init
+  - lint
+  - build
+  - test
+  - deploy
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  # untracked: true
+  paths:
+    - node_modules/
+
+# before_script
+
+pep-init-build-deploy:
+  stage: build
+  only:
+    - build
+    # - master
+    # - dev
+  script:
+    #- yarn || (npm install -g yarn && yarn)
+    - npm install
+    - node_modules/gulp/bin/gulp.js --gulpfile ./gulpfile.js deploy --ci-branch $CI_COMMIT_REF_NAME --ci-user $user --ci-pass $pass
+
+  artifacts:
+    paths:
+      - dist/
+    name: "release-$CI_PROJECT_PATH_SLUG"
+    expire_in: 1 week

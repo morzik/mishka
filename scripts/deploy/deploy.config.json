@@ -1,0 +1,11 @@
+{
+  "ftp": {
+    "user": "",
+    "pass": ""
+  },
+  "master": {
+    "user": "",
+    "pass": "",
+    "passphrase": ""
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "author": "j.selin",
+  "package": "jquery",
+  "description": "Создание и подключение других jQuery компонентов",
+  "dependencies": [],
+  "status": {},
+  "#status": [
+    {
+      "id": "local",
+      "description": "используется только в этом приложении"
+    },
+    {
+      "id": "project",
+      "description": "может быть использованно в других приложениях этого проекта"
+    },
+    {
+      "id": "global",
+      "description": "может быть использованно в других проектах"
+    }
+  ]
+}

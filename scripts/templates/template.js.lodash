@@ -1,0 +1,15 @@
+import {registerPlugins, Plugin} from '<%- relativePath %>';
+
+class <%-className%> extends Plugin {
+  constructor($element) {
+    super($element);
+  }
+}
+
+registerPlugins(
+  {
+    "name": "<%-camelCase%>",
+    "Constructor": <%-className%>,
+    "selector": ".<%-componentName%>"
+  }
+);
