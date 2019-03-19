@@ -2,10 +2,63 @@
  * Обычный текст
  */
 %DEFAULT {
-  font-family: $Arial;
-  font-size: 18px;
-  color: #000000;
+  font-family: $PTSans;
+  font-size: 14px;
+  line-height: 1.7;
+  text-transform: uppercase;
+  color: $BLACK;
+}
+
+/**
+ * 
+ */
+%MENU {
+  font-family: $PTSans;
+  font-size: 14px;
+  line-height: 4;
+  text-transform: uppercase;
+  font-weight: bold;
   @include MOBILE {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 3;
   }
+}
+
+/**
+ * 
+ */
+%H2 {
+  font-family: $PTSans;
+  font-size: 21px;
+  line-height: 1.23;
+  text-transform: uppercase;
+  font-weight: bold;
+  @include MOBILE {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+/**
+ * 
+ */
+%BUTTON {
+  font-family: $PTSans;
+  font-size: 21px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $WHITE;
+}
+
+/**
+ * 
+ */
+%HASHTAG {
+  font-family: $PTSans;
+  font-size: 21px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $BLACK;
 }
