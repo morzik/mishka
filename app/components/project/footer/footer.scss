@@ -40,10 +40,13 @@
   &__hatmlacademy{
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    padding: vw(0 44px);
+    justify-content: center;
     box-sizing: border-box;
     text-decoration: none;
+    @include DESKTOP{
+      justify-content: flex-end;
+      padding: vw(0 44px);
+    }
   }
 
   &__hatmlacademy-icon{
@@ -65,6 +68,12 @@
   }
 
   &__hatmlacademy-span{
-    margin-right: vw(11px);
+    $mr: 11px;
+    @include DESKTOP{
+      margin-right: vw($mr);
+    }
+    @include TABLET{
+      margin-right: vw-t($mr);
+    }
   }
 }
