@@ -27,7 +27,7 @@
       },
       {
           "label": "HTML Academy",
-          "href": ""
+          "href": "https://htmlacademy.ru/"
       }
   ],
 
@@ -40,7 +40,7 @@
         {
           "title": "НАСТОЯЩИЙ ГОРОДОК ",
           "index": "1",
-          "description": "СЕДОНА НЕ&nbsp;АТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ&nbsp;ТЕЧЕТ СВОЯ ЖИЗНЬ",
+          "description": "СЕДОНА НЕ&nbsp;АТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ ТЕЧЕТ СВОЯ ЖИЗНЬ",
           "type": "left",
           "image": "images/index/city.jpg",
           "options": [
@@ -57,7 +57,7 @@
             {
               "icon": "gift",
               "title": "сувениры",
-              "text": "Не&nbsp;только китайского, но&nbsp;и&nbsp;местного&nbsp;производства!"
+              "text": "Не&nbsp;только китайского, но&nbsp;и&nbsp;местного производства!"
             }
           ]
         },
@@ -75,16 +75,37 @@
           "type": "gray"
         },
         {
-          "title": "КРАСИВАЯ ДОРОГА",
+          "title": "КРАСИВАЯ <br>ДОРОГА",
           "index": "4",
           "description": "ЕХАТЬ В&nbsp;СЕДОНУ ИЗ&nbsp;ЛАС-ВЕГАСА совсем НЕ&nbsp;СКУЧНО!",
           "type": "gray"
         },
         {
-          "title": "МАЛО ТУРИСТОВ",
+          "title": "МАЛО <br>ТУРИСТОВ",
           "index": "5",
           "description": "Большинство едет в&nbsp;гранд каньон и&nbsp;толпится там",
           "type": "gray"
+        }
+      ]
+    },
+    "form":{
+      "title":"ЗАИНТЕРЕСОВАЛИСЬ?",
+      "text":"Укажите предполагаемые даты поездки <br>и&nbsp;мы&nbsp;покажем вам лучшие предложения гостиниц в&nbsp;Cедоне"
+    }
+  },
+
+  "footer":{
+    "hashtag":"#visitSedona",
+    "socialBlock":{
+      "list":[
+        {
+          "soc":"tw"
+        },
+        {
+          "soc":"fb"
+        },
+        {
+          "soc":"yt"
         }
       ]
     }

@@ -10,6 +10,9 @@
   @include DESKTOP {
     font-size: vw(14px);
   }
+  @include TABLET {
+    font-size: vw-t(14px);
+  }
 }
 
 /**
@@ -27,6 +30,30 @@
   }
   @include DESKTOP {
     font-size: vw(14px);
+  }
+  @include TABLET {
+    font-size: vw-t(14px);
+  }
+}
+
+/**
+ *
+ */
+%FORM-TITLE {
+  font-family: $PTSans;
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: bold;
+  @include MOBILE {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  @include DESKTOP {
+    font-size: vw(30px);
+  }
+  @include TABLET {
+    font-size: vw-t(30px);
   }
 }
 
@@ -46,6 +73,9 @@
   @include DESKTOP {
     font-size: vw(21px);
   }
+  @include TABLET {
+    font-size: vw-t(21px);
+  }
 }
 
 /**
@@ -61,6 +91,9 @@
   @include DESKTOP {
     font-size: vw(21px);
   }
+  @include TABLET {
+    font-size: vw-t(21px);
+  }
 }
 
 /**
@@ -75,5 +108,8 @@
   color: $BLACK;
   @include DESKTOP {
     font-size: vw(21px);
+  }
+  @include TABLET {
+    font-size: vw-t(21px);
   }
 }

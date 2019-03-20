@@ -1,0 +1,7 @@
+mixin footer(content, params)
+  .footer&attributes(attributes)
+    .footer__hashtag!=content.hashtag
+    +social-block(content.socialBlock).footer__social-block
+    a(href="https://htmlacademy.ru/" trager="_blank").footer__hatmlacademy
+      .footer__hatmlacademy-span разработано
+      include htmlacademy.svg

@@ -10,8 +10,6 @@
       @content;
     }
   }
-  // width: vw(1200px);
-  // margin: auto;
   background: $WHITE;
 
   @include MOBILE{
@@ -23,8 +21,6 @@
     left: 0;
     right: 0;
     display: block;
-    width: 188px;
-    height: 96px;
     margin: auto;
     z-index: 1;
     background: {
@@ -33,10 +29,20 @@
       image: image("header/logo.svg");
       size: contain;
     };
-    @include MOBILE{
-      width: 102px;
-      height: 83px;
+    @include NOT-DESKTOP{
       background-image: image("header/logo-mob.svg");
+    }
+    @include DESKTOP{
+      width: vw(188px);
+      height: vw(96px);
+    }
+    @include TABLET{
+      width: vw-t(102px);
+      height: vw-t(83px);
+    }
+    @include MOBILE{
+      width: vw-m(102px);
+      height: vw-m(83px);
     }
   }
 
@@ -44,7 +50,6 @@
     display: none;
     width: 23px;
     height: 21px;
-    // display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 20px;

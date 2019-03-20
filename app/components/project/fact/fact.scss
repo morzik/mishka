@@ -1,5 +1,6 @@
 .fact {
   // Константы
+  $h: 256px;
   @mixin mod($mod) {
     @include modifier("fact", $mod){
       @content;
@@ -22,6 +23,12 @@
     @include mod(right){
       flex-direction: row-reverse;
     }
+    @include DESKTOP{
+      height: vw($h);
+    }
+    @include TABLET{
+      height: vw-t($h);
+    }
   }
 
   &__info{
@@ -31,7 +38,6 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    height: vw(256px);
     padding: vw(0 70px);
     background: $BLUE;
     color: $WHITE;
@@ -39,6 +45,7 @@
       background: $GRAY;
       color: $BLACK;
     }
+
   }
   &__title{
     @extend %H2;
@@ -52,11 +59,20 @@
   }
   &__image{
     flex: 0 0 auto;
-    height: vw(256px);
+    height: 100%;
+    @include TABLET{
+      width: 66.75%;
+    }
   }
   &__options{
     display: flex;
-
+    $h: 330px;
+    @include DESKTOP{
+      height: vw($h);
+    }
+    @include TABLET{
+      height: vw-t($h);
+    }
   }
   &__option{
 
@@ -68,7 +84,7 @@
     flex-direction: column;
     flex: 1 1 auto;
     width: 100%;
-    height: vw(330px);
+    height: 100%;
     text-align: center;
     transition: background .3s, color .3s;
     cursor: default;
@@ -83,6 +99,7 @@
       position: absolute;
       border: 0px solid $BLUE;
       transition: width .3s, height .3s .3s,;
+      pointer-events: none;
     }
 
 
@@ -121,9 +138,16 @@
   }
 
   &__option-icon{
-    $w: vw(75px);
-    width: $w;
-    height: $w;
+    $w: 75px;
+    @include DESKTOP{
+      width: vw($w);
+      height: vw($w);
+    }
+    @include TABLET{
+      width: vw-t($w);
+      height: vw-t($w);
+    }
+
     svg{
       max-width: 100%;
       max-height: 100%;

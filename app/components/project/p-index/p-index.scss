@@ -11,37 +11,45 @@
     }
   }
 
-  &__welcome-block {
+  &__intro {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     background: image("index/bg.jpg") no-repeat center / cover;
+    $h:518px;
     @include DESKTOP {
-      height: vw(518px);
+      height: vw($h);
+    }
+    @include TABLET {
+      height: vw-t($h);
     }
     @include MOBILE {
-      height: 389px;
+      height: vw-m(389px);
     }
   }
 
-  &__welcome-block-image {
+  &__intro-image {
+    $h:460px;
     @include DESKTOP {
-      width: vw(460px);
+      width: vw($h);
+    }
+    @include TABLET {
+      width: vw-t($h);
     }
     @include MOBILE {
-      width: 287px;
+      width: vw-m(287px);
     }
   }
 
-  &__welcome-block-line {
+  &__intro-line {
+    $h: 57px;
     position: absolute;
     width: 100%;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 57px;
     overflow: hidden;
     margin: auto;
     svg {
@@ -53,7 +61,10 @@
       height: 101%;
     }
     @include DESKTOP {
-      height: vw(57px);
+      height: vw($h);
+    }
+    @include TABLET {
+      height: vw-t($h);
     }
   }
 
@@ -66,9 +77,12 @@
   &__info-wrap{
     width: 458px;
     margin: auto;
-    padding: 50px 0 55px;
+    $p: 50px 0 55px;
     @include DESKTOP {
-      padding: vw(50px 0 55px);
+      padding: vw($p);
+    }
+    @include TABLET {
+      padding: vw-t($p);
     }
   }
 
@@ -83,8 +97,47 @@
     margin: 0;
   }
   &__info-subtitle{
+    $mt:20px;
     @include DESKTOP {
-      margin-top: vw(20px);
+      margin-top: vw($mt);
+    }
+    @include TABLET {
+      margin-top: vw-t($mt);
+    }
+  }
+
+  &__form{
+    text-align: center;
+    @include DESKTOP {
+      padding: vw(57px 80px 66px);
+    }
+    @include TABLET {
+      padding: vw-t(57px 80px 66px);
+    }
+  }
+
+
+  &__form-title{
+    @extend %FORM-TITLE;
+  }
+  &__form-text{
+    margin: vw(25px 0 52px);
+  }
+
+  &__map{
+    width: 100%;
+    $h:350px;
+    iframe{
+      width: 100%;
+      height: 100%;
+    }
+
+    @include DESKTOP {
+      height: vw($h);
+    }
+
+    @include TABLET {
+      height: vw-t($h);
     }
   }
 }

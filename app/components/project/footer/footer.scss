@@ -1,0 +1,70 @@
+.footer {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("footer", $mod){
+      @content;
+    }
+  }
+  @mixin act-htmlacademy {
+    .footer__hatmlacademy:active &{
+      @content;
+    }
+  }
+  @mixin hov-htmlacademy {
+    .footer__hatmlacademy:hover &{
+      @content;
+    }
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  $h: 120px;
+
+  @include DESKTOP{
+    height: vw($h);
+  }
+  @include TABLET{
+    height: vw-t($h);
+  }
+
+  & > *{
+    width: 100%;
+    flex: 1 1 30%;
+    text-align: center;
+  }
+
+  &__hashtag{
+    @extend %HASHTAG;
+  }
+
+  &__hatmlacademy{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: vw(0 44px);
+    box-sizing: border-box;
+    text-decoration: none;
+  }
+
+  &__hatmlacademy-icon{
+    $w: 27px;
+    transition: fill .3s;
+    @include hov-htmlacademy {
+      fill: $BLUE;
+    }
+    @include act-htmlacademy {
+      fill: #b2b2b2;
+    }
+
+    @include DESKTOP{
+      width: vw($w);
+    }
+    @include TABLET{
+      width: vw-t($w);
+    }
+  }
+
+  &__hatmlacademy-span{
+    margin-right: vw(11px);
+  }
+}
