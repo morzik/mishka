@@ -1,0 +1,20 @@
+mixin fact(content, params)
+  .fact(class=`fact_${content.type}`)&attributes(attributes)
+    .fact__content
+      .fact__wrapper
+        .fact__info
+          .fact__title!=content.title
+          .fact__index &mdash; № #{content.index} &mdash;
+          .fact__description!=content.description
+        if content.image
+          img(src=content.image).fact__image
+      if content.options
+        .fact__options
+          +pug-list(content.options, "fact__option")
+
+mixin fact__option(content, params)
+  .fact__option&attributes(attributes)
+    .fact__option-icon
+      != read(`app/components/project/fact/svg/${content.icon}.svg`)
+    .fact__option-title!=content.title
+    .fact__option-text!=content.text

@@ -14,6 +14,7 @@
     @extend %MENU;
     width: 100%;
     text-align: center;
+    transition: color .3s;
     @include is-burger(){
       display: block;
       margin: auto;
@@ -27,7 +28,24 @@
       &:nth-of-type(3){
         margin-left: 10%;
       }
+      &:hover{
+        color: $BLUE;
+      }
+      &:active{
+        color: rgba($BLACK,0.3);
+      }
+
+      &_active{
+        color: #766357;
+        &:hover{
+          color: #604e43;
+        }
+        &:active{
+          color: rgba(#766357,0.3);
+        }
+      }
     }
+
   }
 
   &__item-link {
@@ -38,10 +56,4 @@
       text-align: center;
     }
   }
-
-
-  /*@include is-burger(){
-    background: #cccccc;
-    min-height: 100vh;
-  }*/
 }

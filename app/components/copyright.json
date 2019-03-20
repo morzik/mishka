@@ -1,64 +1,92 @@
 {
-    "og": {
-        "title": "<?= $share->text ?>",
-        "description": "<?= $share->description ?>",
-        "canonical_url": "<?= $share->canonical_url ?>",
-        "fb_app_id": "",
-        "image": {
-            "default": {
-                "val": "<?= base_url('/' . $share->image) ?>",
-                "width": 1200,
-                "height": 628
+  "og": {
+      "title": "<?= $share->text ?>",
+      "description": "<?= $share->description ?>",
+      "canonical_url": "<?= $share->canonical_url ?>",
+      "fb_app_id": "",
+      "image": {
+          "default": {
+              "val": "<?= base_url('/' . $share->image) ?>",
+              "width": 1200,
+              "height": 628
+          }
+      }
+  },
+
+  "menu": [{
+          "label": "Главная",
+          "href": ""
+      },
+      {
+          "label": "ФОТО И ВИДЕО",
+          "href": ""
+      },
+      {
+          "label": "Форма отзыва",
+          "href": ""
+      },
+      {
+          "label": "HTML Academy",
+          "href": ""
+      }
+  ],
+
+  "pIndex": {
+    "welcomeLogo": "images/index/welcome.svg",
+    "info": {
+      "title": "СЕДОНА&nbsp;&mdash; небольшой городок в&nbsp;АРИЗОНЕ, зАСЛУЖИвающий большего!",
+      "subtitle": "Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!",
+      "list": [
+        {
+          "title": "НАСТОЯЩИЙ ГОРОДОК ",
+          "index": "1",
+          "description": "СЕДОНА НЕ&nbsp;АТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ&nbsp;ТЕЧЕТ СВОЯ ЖИЗНЬ",
+          "type": "left",
+          "image": "images/index/city.jpg",
+          "options": [
+            {
+              "icon": "house",
+              "title": "жилье",
+              "text": "Рекомендуем пожить в&nbsp;настоящем мотеле, все как в&nbsp;кино!"
+            },
+            {
+              "icon": "burger",
+              "title": "еда",
+              "text": "Всегда заказывай ФИРМЕННЫЙ БУРГЕР, Вы&nbsp;НЕ&nbsp;разочаруетесь!"
+            },
+            {
+              "icon": "gift",
+              "title": "сувениры",
+              "text": "Не&nbsp;только китайского, но&nbsp;и&nbsp;местного&nbsp;производства!"
             }
-        }
-    },
-
-    "menu": [{
-            "label": "Главная",
-            "href": ""
+          ]
         },
         {
-            "label": "ФОТО И ВИДЕО",
-            "href": ""
+          "title": "ТАМ ЕСТЬ <br>Мост дьявола",
+          "index": "2",
+          "description": "Да, по&nbsp;нему можно пройти! <br>Если конечно вы&nbsp;осмелитесь",
+          "type": "right",
+          "image": "images/index/bridge.jpg"
         },
         {
-            "label": "Форма отзыва",
-            "href": ""
+          "title": "НЕБОЛЬШАЯ ПЛОЩАДЬ",
+          "index": "3",
+          "description": "ВСЕ достопримечательности находятся&nbsp;очень близко",
+          "type": "gray"
         },
         {
-            "label": "HTML Academy",
-            "href": ""
+          "title": "КРАСИВАЯ ДОРОГА",
+          "index": "4",
+          "description": "ЕХАТЬ В&nbsp;СЕДОНУ ИЗ&nbsp;ЛАС-ВЕГАСА совсем НЕ&nbsp;СКУЧНО!",
+          "type": "gray"
+        },
+        {
+          "title": "МАЛО ТУРИСТОВ",
+          "index": "5",
+          "description": "Большинство едет в&nbsp;гранд каньон и&nbsp;толпится там",
+          "type": "gray"
         }
-    ],
-
-    "pIndex": {
-        "welcomeLogo": "images/index/welcome.svg",
-        "info": {
-            "title": "СЕДОНА — небольшой городок в АРИЗОНЕ,  зАСЛУЖИвающий большего!",
-            "subtitle": "Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!",
-            "list": [{
-                "title": "title",
-                "index": "1",
-                "description": "text",
-                "type": "left",
-                "image": "images/index/city.jpg",
-                "more": [{
-                        "icon": "images/icons/house.svg",
-                        "title": "еда",
-                        "text": "text"
-                    },
-                    {
-                        "icon": "images/icons/burger.svg",
-                        "title": "еда",
-                        "text": "text"
-                    },
-                    {
-                        "icon": "images/icons/gift.svg",
-                        "title": "еда",
-                        "text": "text"
-                    }
-                ]
-            }]
-        }
+      ]
     }
+  }
 }

@@ -7,6 +7,9 @@
   line-height: 1.7;
   text-transform: uppercase;
   color: $BLACK;
+  @include DESKTOP {
+    font-size: vw(14px);
+  }
 }
 
 /**
@@ -21,6 +24,9 @@
   @include MOBILE {
     font-size: 18px;
     line-height: 40px;
+  }
+  @include DESKTOP {
+    font-size: vw(14px);
   }
 }
 
@@ -37,6 +43,9 @@
     font-size: 18px;
     line-height: 1.4;
   }
+  @include DESKTOP {
+    font-size: vw(21px);
+  }
 }
 
 /**
@@ -49,6 +58,9 @@
   text-transform: uppercase;
   font-weight: bold;
   color: $WHITE;
+  @include DESKTOP {
+    font-size: vw(21px);
+  }
 }
 
 /**
@@ -61,4 +73,7 @@
   text-transform: uppercase;
   font-weight: bold;
   color: $BLACK;
+  @include DESKTOP {
+    font-size: vw(21px);
+  }
 }

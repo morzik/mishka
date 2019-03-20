@@ -5,31 +5,16 @@ mixin p-index(content, params)
       .p-index__welcome-block-line
         include bottom-line.svg
     +p-index__info(content.info)
+    +p-index__form
 
 
 mixin p-index__info(content, params)
   .p-index__info&attributes(attributes)
-    h2.p-index__info-title!=content.title
-    .p-index__info-subtitle!=content.subtitle
+    .p-index__info-wrap
+      h2.p-index__info-title!=content.title
+      .p-index__info-subtitle!=content.subtitle
     .p-index__info-list
-      +pug-list(content.list, "p-index__item")
+      +pug-list(content.list, "fact")
 
-mixin p-index__item(content, params)
-  .p-index__item&attributes(attributes)
-    .p-index__item-info
-      h2.p-index__item-title!=content.title
-      .p-index__item-index - № #{content.index} -
-      .p-index__item-description!=content.description
-      if content.image
-        img(src=content.image).p-index__item-image
-    if content.more
-      .p-index__more-info
-        +pug-list(content.more, "p-index__more-item")
-
-
-mixin p-index__more-item(content, params)
-  .p-index__more-item&attributes(attributes)
-    .p-index__more-item-icon
-      img(src=content.icon)
-    .p-index__more-item-title!=content.title
-    .p-index__more-item-text!=content.text
+mixin p-index__form(content, params)
+  .p-index__form&attributes(attributes)

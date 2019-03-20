@@ -1,0 +1,141 @@
+.fact {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("fact", $mod){
+      @content;
+    }
+  }
+  @mixin option-hover {
+    .fact__option:hover &{
+      @content;
+    }
+  }
+  width: 100%;
+
+  &_gray{
+    flex: 1 1 30%;
+  }
+
+  &__wrapper{
+    display: flex;
+    flex-direction: row;
+    @include mod(right){
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: vw(256px);
+    padding: vw(0 70px);
+    background: $BLUE;
+    color: $WHITE;
+    @include mod(gray){
+      background: $GRAY;
+      color: $BLACK;
+    }
+  }
+  &__title{
+    @extend %H2;
+  }
+
+  &__index{
+    margin: vw(10px auto);
+  }
+
+  &__description{
+  }
+  &__image{
+    flex: 0 0 auto;
+    height: vw(256px);
+  }
+  &__options{
+    display: flex;
+
+  }
+  &__option{
+
+    $w:4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    height: vw(330px);
+    text-align: center;
+    transition: background .3s, color .3s;
+    cursor: default;
+
+    &:before,
+    &:after{
+      content: '';
+      clear: both;
+      display: block;
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      border: 0px solid $BLUE;
+      transition: width .3s, height .3s .3s,;
+    }
+
+
+    &:before{
+      top: $w;
+      right: $w;
+      border-bottom: none;
+      border-right: none;
+    }
+    &:after{
+      bottom: $w;
+      left: $w;
+      border-top: none;
+      border-left: none;
+    }
+
+    &:hover{
+      background: $BLUE;
+      color: $WHITE;
+
+      &:before,
+      &:after{
+        border-color: $WHITE;
+        border-width: $w;
+        width: calc(100% - #{$w}*3);
+        height: calc(100% - #{$w}*3);
+      }
+    }
+  }
+  &__option-title{
+    @extend %H2;
+    margin: vw(20px 0);
+  }
+  &__option-text{
+    width: 60%;
+  }
+
+  &__option-icon{
+    $w: vw(75px);
+    width: $w;
+    height: $w;
+    svg{
+      max-width: 100%;
+      max-height: 100%;
+      fill: $BLUE;
+      transform-origin: 50% 100%;
+      transition: transform .3s, fill .3s;
+
+      @include option-hover{
+        transform: scale(1.1);
+        fill: $WHITE;
+      }
+    }
+  }
+
+}

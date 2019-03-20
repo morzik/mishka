@@ -1,60 +1,90 @@
 .p-index {
-    // Константы
-    @mixin mod($mod) {
-        @include modifier("p-index", $mod) {
-            @content;
-        }
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("p-index", $mod) {
+      @content;
     }
-    &__welcome-block {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background: image("index/bg.jpg") no-repeat center / cover;
-        @include DESKTOP {
-            height: vw(518px);
-        }
-        @include MOBILE {
-            height: 389px;
-        }
+  }
+  @mixin item-mod($mod) {
+    @include modifier("p-index__item", $mod) {
+      @content;
     }
-    &__welcome-block-image {
-        @include DESKTOP {
-            width: vw(460px);
-        }
-        @include MOBILE {
-            width: 287px;
-        }
+  }
+
+  &__welcome-block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: image("index/bg.jpg") no-repeat center / cover;
+    @include DESKTOP {
+      height: vw(518px);
     }
-    &__welcome-block-line {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 57px;
-        overflow: hidden;
-        margin: auto;
-        svg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: block;
-            height: 101%;
-        }
-        @include DESKTOP {
-            height: vw(57px);
-        }
+    @include MOBILE {
+      height: 389px;
     }
-    &__info-title {
-        @extend %H2;
+  }
+
+  &__welcome-block-image {
+    @include DESKTOP {
+      width: vw(460px);
     }
-    &__info-title,
-    &__info-subtitle {
-        width: vw(500px);
-        margin: auto;
-        text-align: center;
+    @include MOBILE {
+      width: 287px;
     }
+  }
+
+  &__welcome-block-line {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 57px;
+    overflow: hidden;
+    margin: auto;
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      height: 101%;
+    }
+    @include DESKTOP {
+      height: vw(57px);
+    }
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  &__info-wrap{
+    width: 458px;
+    margin: auto;
+    padding: 50px 0 55px;
+    @include DESKTOP {
+      padding: vw(50px 0 55px);
+    }
+  }
+
+  &__info-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__info-title{
+    @extend %H2;
+    margin: 0;
+  }
+  &__info-subtitle{
+    @include DESKTOP {
+      margin-top: vw(20px);
+    }
+  }
 }
