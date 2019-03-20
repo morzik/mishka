@@ -6,8 +6,8 @@
     }
   }
   @extend %BUTTON;
-  width: 485px;
-  height: 58px;
+  $w: 485px;
+  $h: 58px;
   background: $BLUE;
   border: none;
   cursor: pointer;
@@ -19,5 +19,14 @@
   &:active{
     background: #5496bd;
     color: rgba($WHITE,.3);
+  }
+
+  @include DESKTOP{
+    width: vw($w);
+    height: vw($h);
+  }
+  @include TABLET{
+    width: vw-t($w);
+    height: vw-t($h);
   }
 }
