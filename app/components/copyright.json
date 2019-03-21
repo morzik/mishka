@@ -15,11 +15,11 @@
 
   "menu": [{
           "label": "Главная",
-          "href": ""
+          "href": "index"
       },
       {
           "label": "ФОТО И ВИДЕО",
-          "href": ""
+          "href": "/photo"
       },
       {
           "label": "Форма отзыва",
