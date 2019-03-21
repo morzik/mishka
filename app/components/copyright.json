@@ -32,7 +32,6 @@
   ],
 
   "pIndex": {
-    "welcomeLogo": "images/index/welcome.svg",
     "info": {
       "title": "СЕДОНА&nbsp;&mdash; небольшой городок в&nbsp;АРИЗОНЕ, зАСЛУЖИвающий большего!",
       "subtitle": "Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!",
@@ -52,7 +51,7 @@
             {
               "icon": "burger",
               "title": "еда",
-              "text": "Всегда заказывай ФИРМЕННЫЙ БУРГЕР, Вы&nbsp;НЕ&nbsp;разочаруетесь!"
+              "text": "Всегда заказывайте ФИРМЕННЫЙ БУРГЕР, Вы&nbsp;НЕ&nbsp;разочаруетесь!"
             },
             {
               "icon": "gift",
@@ -69,7 +68,7 @@
           "image": "images/index/bridge.jpg"
         },
         {
-          "title": "НЕБОЛЬШАЯ ПЛОЩАДЬ",
+          "title": "НЕБОЛЬШАЯ <br>ПЛОЩАДЬ",
           "index": "3",
           "description": "ВСЕ достопримечательности находятся&nbsp;очень близко",
           "type": "gray"
@@ -94,18 +93,66 @@
     }
   },
 
+  "pPhoto":{
+    "info":{
+      "title":"Фото и видео",
+      "text":"Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике."
+    },
+    "gallery":[
+      {
+        "title":"очарование",
+        "class":"big",
+        "author":"Tanya",
+        "image":"data/photo/web1.jpg",
+        "likes":"1350"
+      },
+      {
+        "title":"место для романтиков",
+        "class":"small",
+        "author":"Rikki",
+        "image":"data/photo/233.jpg",
+        "likes":"650"
+      },
+      {
+        "title":"растительность",
+        "class":"small",
+        "author":"Moon",
+        "image":"data/photo/432.jpg",
+        "likes":"980"
+      },
+      {
+        "title":"дом мечты",
+        "class":"small",
+        "author":"Elle",
+        "image":"data/photo/bk.jpg",
+        "likes":"123"
+      }
+    ],
+    "bonus":{
+      "title":"Все еще сомневаетесь?",
+      "text":"Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!",
+      "video":{
+        "poster":"data/video/sedona-v.png",
+        "src":""
+      }
+    }
+  },
+
   "footer":{
     "hashtag":"#visitSedona",
     "socialBlock":{
       "list":[
         {
-          "soc":"tw"
+          "soc":"tw",
+          "href":"https://twitter.com/SedonaAZ"
         },
         {
-          "soc":"fb"
+          "soc":"fb",
+          "href":"https://www.facebook.com/VisitSedona"
         },
         {
-          "soc":"yt"
+          "soc":"yt",
+          "href":"https://www.youtube.com/user/SedonaAZ1"
         }
       ]
     }

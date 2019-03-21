@@ -11,63 +11,6 @@
     }
   }
 
-  &__intro {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    background: image("index/bg.jpg") no-repeat center / cover;
-    $h:518px;
-    @include DESKTOP {
-      height: vw($h);
-    }
-    @include TABLET {
-      height: vw-t($h);
-    }
-    @include MOBILE {
-      height: vw-m(389px);
-    }
-  }
-
-  &__intro-image {
-    $h:460px;
-    @include DESKTOP {
-      width: vw($h);
-    }
-    @include TABLET {
-      width: vw-t($h);
-    }
-    @include MOBILE {
-      width: vw-m(287px);
-    }
-  }
-
-  &__intro-line {
-    $h: 57px;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    overflow: hidden;
-    margin: auto;
-    svg {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      display: block;
-      height: 101%;
-    }
-    @include DESKTOP {
-      height: vw($h);
-    }
-    @include TABLET {
-      height: vw-t($h);
-    }
-  }
-
   &__info{
     display: flex;
     flex-direction: column;
@@ -75,14 +18,20 @@
     text-align: center;
   }
   &__info-wrap{
-    width: 458px;
+    $w: 458px;
     margin: auto;
     $p: 50px 0 55px;
     @include DESKTOP {
+      width: vw($w);
       padding: vw($p);
     }
     @include TABLET {
+      width: vw-t($w);
       padding: vw-t($p);
+    }
+    @include MOBILE {
+      width: 70vw;
+      padding: vw-m(44px 0 30px);
     }
   }
 
@@ -90,12 +39,16 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    @include MOBILE {
+      flex-direction: column;
+    }
   }
 
   &__info-title{
     @extend %H2;
     margin: 0;
   }
+
   &__info-subtitle{
     $mt:20px;
     @include DESKTOP {
@@ -103,6 +56,9 @@
     }
     @include TABLET {
       margin-top: vw-t($mt);
+    }
+    @include MOBILE {
+      margin-top: vw-m($mt);
     }
   }
 
@@ -114,6 +70,11 @@
     @include TABLET {
       padding: vw-t(57px 80px 66px);
     }
+    @include MOBILE {
+      width: vw-m(280px);
+      margin: auto;
+      padding: vw-m(33px 0 49px);
+    }
   }
 
 
@@ -121,7 +82,15 @@
     @extend %FORM-TITLE;
   }
   &__form-text{
-    margin: vw(25px 0 52px);
+    @include DESKTOP {
+      margin: vw(25px 0 52px);
+    }
+    @include TABLET {
+      margin: vw-t(25px 0 52px);
+    }
+    @include MOBILE {
+      margin: vw-m(10px 0 25px);
+    }
   }
 
   &__map{
@@ -138,6 +107,9 @@
 
     @include TABLET {
       height: vw-t($h);
+    }
+    @include MOBILE {
+      height: vw-m($h);
     }
   }
 }

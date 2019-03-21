@@ -7,7 +7,8 @@ mixin fact(content, params)
           .fact__index &mdash; № #{content.index} &mdash;
           .fact__description!=content.description
         if content.image
-          img(src=content.image).fact__image
+          .fact__image
+            img(src=content.image)
       if content.options
         .fact__options
           +pug-list(content.options, "fact__option")
@@ -16,5 +17,6 @@ mixin fact__option(content, params)
   .fact__option&attributes(attributes)
     .fact__option-icon
       != read(`app/components/project/fact/svg/${content.icon}.svg`)
-    .fact__option-title!=content.title
-    .fact__option-text!=content.text
+    .fact__option-info
+      .fact__option-title!=content.title
+      .fact__option-text!=content.text

@@ -1,0 +1,207 @@
+.p-photo {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("p-photo", $mod){
+      @content;
+    }
+  }
+  @mixin item-mod($mod) {
+    @include modifier("p-photo__item", $mod){
+      @content;
+    }
+  }
+  @mixin item-hover {
+    .p-photo__item:hover &{
+      @include DESKTOP{
+        @content;
+      }
+    }
+  }
+
+  &__info{
+    text-align: center;
+    box-sizing: border-box;
+
+    @include DESKTOP{
+      padding: vw(113px 0px 77px);
+      width: vw(428px);
+      margin: auto;
+    }
+    @include TABLET{
+      padding: vw-t(76px 0px);
+      width: vw-t(428px);
+      margin: auto;
+    }
+    @include MOBILE{
+      padding: vw-m(44px 20px 33px);
+    }
+  }
+
+  &__info-title{
+    @extend %H2;
+    margin: 0;
+  }
+  &__info-text{
+    $m:20px;
+    @include DESKTOP{
+      margin-top: vw($m);
+    }
+    @include TABLET{
+      margin-top: vw-t($m);
+    }
+    @include MOBILE{
+      margin-top: vw-m($m);
+    }
+  }
+  &__gallery{
+    @include NOT-MOBILE{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @include TABLET{
+      padding: vw-t(0 60px);
+    }
+    @include MOBILE{
+      border-bottom: 1px solid #b2b2b2;
+    }
+  }
+
+  &__item{
+    position: relative;
+    @include DESKTOP{
+      flex: 1 1 33%;
+      height: vw(267px);
+      &_big{
+        flex: 1 1 100%;
+        height: vw(400px);
+      }
+    }
+    @include TABLET{
+      flex: 0 1 50%;
+      // height: vw-t(267px);
+      &_big{
+        flex: 1 1 100%;
+        // height: vw-t(400px);
+      }
+    }
+    @include MOBILE{
+      padding: vw-m(22px 20px);
+      box-sizing: border-box;
+      border-top: 1px solid #b2b2b2;
+    }
+  }
+
+  &__item-info{
+    position: relative;
+    @include DESKTOP{
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba($BLACK,0.3);
+      color: $WHITE;
+      padding: vw(21px 22px);
+      transition: padding .3s, background .3s;
+      @include item-hover{
+        padding-bottom: vw(100px);
+        background: rgba($BLACK,0.5);
+      }
+    }
+
+    @include TABLET{
+      padding: vw-t(21px 22px);
+      background: $GRAY;
+    }
+  }
+
+  &__item-title{
+    font-weight: bold;
+  }
+  &__author{
+    text-transform: none;
+  }
+
+  &__image{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    @include MOBILE{
+      height: vw-m(280px);
+      margin-bottom: vw-m(21px);
+    }
+    @include TABLET{
+      height: vw-t(267px);
+      @include item-mod(big){
+        height: vw-t(400px);
+      }
+    }
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include DESKTOP{
+        min-height: 100%;
+        width: 100%;
+      }
+      @include NOT-DESKTOP{
+        height: 100%;
+      }
+    }
+  }
+
+  &__likes{
+    display: flex;
+
+    @include NOT-MOBILE{
+      position: absolute;
+    }
+    @include DESKTOP{
+      right: vw(22px);
+      top: vw(33px);
+    }
+    @include TABLET{
+      right: vw-t(22px);
+      top: vw-t(33px);
+    }
+
+  }
+  &__likes-icon{
+    $w: 24px;
+    $h: 22px;
+    $m: 9px;
+
+    @include MOBILE{
+      fill: #b2b2b2;
+      width: vw-m($w);
+      height: vw-m($h);
+      margin-right: vw-m($m);
+    }
+    @include TABLET{
+      fill: #b2b2b2;
+      width: vw-t($w);
+      height: vw-t($h);
+      margin-right: vw-t($m);
+    }
+
+    @include DESKTOP{
+      fill: $WHITE;
+      width: vw($w);
+      height: vw($h);
+      margin-right: vw($m);
+    }
+  }
+
+  &__bonus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+  }
+  &__bonus-title{
+    @extend %H2;
+    margin: 0;
+  }
+}

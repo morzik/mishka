@@ -1,0 +1,93 @@
+.intro-block {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("intro-block", $mod){
+      @content;
+    }
+  }
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  background: image("index/bg.jpg") no-repeat center bottom / cover;
+  $h: 301px;
+
+  @include DESKTOP {
+    height: vw($h);
+  }
+  @include TABLET {
+    height: vw-t($h);
+  }
+  @include MOBILE {
+    height: vw-m(158px);
+  }
+
+  &_index{
+    $h:518px;
+    @include DESKTOP {
+      height: vw($h);
+    }
+    @include TABLET {
+      height: vw-t($h);
+    }
+    @include MOBILE {
+      height: vw-m(389px);
+    }
+  }
+
+
+  &__svg{
+    $h:460px;
+    @include DESKTOP {
+      width: vw($h);
+    }
+    @include TABLET {
+      width: vw-t($h);
+    }
+    @include MOBILE {
+      width: vw-m(229px);
+      @include mod(index){
+        width: vw-m(280px);
+      }
+    }
+  }
+
+  &__subtitle{
+    display: none;
+
+    @include mod(index){
+      display: block;
+    }
+  }
+
+  &__line{
+    $h: 57px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    margin: auto;
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      height: 101%;
+    }
+    @include DESKTOP {
+      height: vw($h);
+    }
+    @include TABLET {
+      height: vw-t($h);
+    }
+    @include MOBILE {
+      height: vw-m($h);
+    }
+  }
+}

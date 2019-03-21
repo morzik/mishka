@@ -1,0 +1,23 @@
+.video {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("video", $mod){
+      @content;
+    }
+  }
+  @include DESKTOP{
+    width: vw(800px);
+    height: vw(500px);
+  }
+  @include TABLET{
+    width: vw-t(648px);
+    height: vw-t(499px);
+  }
+  @include MOBILE{
+    width: 100%;
+  }
+
+  video{
+    width: 100%;
+  }
+}

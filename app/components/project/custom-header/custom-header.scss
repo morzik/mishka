@@ -13,7 +13,7 @@
   background: $WHITE;
 
   @include MOBILE{
-    height: 56px;
+    height: vw-m(56px);
   }
 
   &__logo {
@@ -48,16 +48,16 @@
 
   &__burger {
     display: none;
-    width: 23px;
-    height: 21px;
+    width: vw-m(23px);
+    height: vw-m(21px);
     flex-direction: column;
     justify-content: space-between;
-    margin: 20px;
+    margin: vw-m(20px);
     position: absolute;
     top: 0;
     right: 0;
     p{
-      height: 3px;
+      height: vw-m(3px);
       display: block;
       width: 100%;
       margin: 0;

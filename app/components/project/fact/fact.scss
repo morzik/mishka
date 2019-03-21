@@ -1,6 +1,7 @@
 .fact {
   // Константы
-  $h: 256px;
+
+  $pm:vw-m(20px);
   @mixin mod($mod) {
     @include modifier("fact", $mod){
       @content;
@@ -8,26 +9,63 @@
   }
   @mixin option-hover {
     .fact__option:hover &{
-      @content;
+      @include DESKTOP{
+        @content;
+      }
     }
   }
+  position: relative;
   width: 100%;
+  background: $BLUE;
+  color: $WHITE;
+  @include mod(gray){
+    background: $GRAY;
+    color: $BLACK;
+  }
 
   &_gray{
     flex: 1 1 30%;
+
+    @include MOBILE{
+      &:after{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        clear: both;
+        display: block;
+        width: vw-m(280px);
+        height: 1px;
+        margin: auto;
+        background: #b2b2b2;
+      }
+    }
+
+    &:nth-last-of-type(1){
+      &:after{
+        display: none;
+      }
+    }
   }
 
   &__wrapper{
+    $h: 256px;
     display: flex;
     flex-direction: row;
     @include mod(right){
-      flex-direction: row-reverse;
+      @include NOT-MOBILE{
+        flex-direction: row-reverse;
+      }
     }
     @include DESKTOP{
       height: vw($h);
     }
     @include TABLET{
       height: vw-t($h);
+    }
+    @include MOBILE{
+      flex-direction: column;
     }
   }
 
@@ -38,17 +76,52 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: vw(0 70px);
-    background: $BLUE;
-    color: $WHITE;
-    @include mod(gray){
-      background: $GRAY;
-      color: $BLACK;
+    box-sizing: border-box;
+
+    @include DESKTOP{
+      padding: vw(0 70px);
+    }
+    @include TABLET{
+      padding: vw-t(0 50px);
     }
 
+    @include MOBILE{
+      padding: vw-m(0 56px);
+      height: vw-m(191px);
+
+      @include mod(gray){
+        height: vw-m(168px);
+      }
+      @include mod(left){
+        height: vw-m(211px);
+        padding-top: vw-m(19px);
+      }
+    }
+
+    @include mod(left){
+      @include MOBILE{
+        &:before{
+          content: '';
+          clear: both;
+          display: block;
+          position: absolute;
+          top: vw-m(-19px);
+          left: 0;
+          right: 0;
+          height: vw-m(38px);
+          background: image("index/line-m.svg") no-repeat center / auto 100% ;
+        }
+      }
+    }
   }
   &__title{
     @extend %H2;
+
+    @include MOBILE{
+      br{
+        display: none;
+      }
+    }
   }
 
   &__index{
@@ -58,10 +131,34 @@
   &__description{
   }
   &__image{
-    flex: 0 0 auto;
+    position: relative;
+    flex: 1 0 auto;
     height: 100%;
+    overflow: hidden;
+
+    @include DESKTOP{
+      width: 62.5vw;
+    }
     @include TABLET{
-      width: 66.75%;
+      // width: 67.125vw;
+      width: vw-t(256px * 2);
+    }
+    @include MOBILE{
+      height: vw-m(260px);
+    }
+
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include NOT-DESKTOP{
+        height: 100%;
+      }
+      @include DESKTOP{
+        width: 100%;
+      }
     }
   }
   &__options{
@@ -72,6 +169,11 @@
     }
     @include TABLET{
       height: vw-t($h);
+    }
+    @include MOBILE{
+      background: $WHITE;
+      padding: vw-m(20px 0);
+      flex-direction: column;
     }
   }
   &__option{
@@ -88,53 +190,80 @@
     text-align: center;
     transition: background .3s, color .3s;
     cursor: default;
+    background: $WHITE;
+    color: $BLACK;
 
-    &:before,
-    &:after{
-      content: '';
-      clear: both;
-      display: block;
-      width: 0px;
-      height: 0px;
-      position: absolute;
-      border: 0px solid $BLUE;
-      transition: width .3s, height .3s .3s,;
-      pointer-events: none;
+    @include MOBILE{
+      padding: $pm;
+      box-sizing: border-box;
+
+      &:nth-of-type(2){
+        order:1;
+      }
     }
 
-
-    &:before{
-      top: $w;
-      right: $w;
-      border-bottom: none;
-      border-right: none;
-    }
-    &:after{
-      bottom: $w;
-      left: $w;
-      border-top: none;
-      border-left: none;
-    }
-
-    &:hover{
-      background: $BLUE;
-      color: $WHITE;
-
+    @include DESKTOP{
       &:before,
       &:after{
-        border-color: $WHITE;
-        border-width: $w;
-        width: calc(100% - #{$w}*3);
-        height: calc(100% - #{$w}*3);
+        content: '';
+        clear: both;
+        display: block;
+        width: 0px;
+        height: 0px;
+        position: absolute;
+        border: 0px solid $BLUE;
+        transition: width .3s, height .3s .3s,;
+        pointer-events: none;
       }
+
+
+      &:before{
+        top: $w;
+        right: $w;
+        border-bottom: none;
+        border-right: none;
+      }
+      &:after{
+        bottom: $w;
+        left: $w;
+        border-top: none;
+        border-left: none;
+      }
+
+      &:hover{
+        background: $BLUE;
+        color: $WHITE;
+
+        &:before,
+        &:after{
+          border-color: $WHITE;
+          border-width: $w;
+          width: calc(100% - #{$w}*3);
+          height: calc(100% - #{$w}*3);
+        }
+      }
+    }
+
+  }
+  &__option-info{
+    width: 60%;
+    margin: 0 auto;
+    @include MOBILE{
+      width: 65%;
+      text-align: left;
     }
   }
   &__option-title{
     @extend %H2;
-    margin: vw(20px 0);
-  }
-  &__option-text{
-    width: 60%;
+    @include DESKTOP{
+      margin: vw(20px 0);
+    }
+    @include TABLET{
+      margin: vw-t(20px 0);
+    }
+    @include MOBILE{
+      margin: vw-m(5px 0 10px);
+    }
   }
 
   &__option-icon{
@@ -146,6 +275,13 @@
     @include TABLET{
       width: vw-t($w);
       height: vw-t($w);
+    }
+    @include MOBILE{
+      position: absolute;
+      top: calc(#{$pm} * 0.75);
+      left: calc(#{$pm} * 0.5);
+      width: vw-m(50px);
+      height: vw-m(36px);
     }
 
     svg{

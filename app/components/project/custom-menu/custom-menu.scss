@@ -7,6 +7,7 @@
 
   @include MOBILE{
     flex-direction: column;
+    box-shadow: inset 0 0px 10px rgba(1, 1, 1, 0.2);
   }
 
 
@@ -18,7 +19,7 @@
     @include is-burger(){
       display: block;
       margin: auto;
-      box-shadow: 0 1px 0 rgba(1, 1, 1, 0.2);
+      box-shadow: 0 -1px 0 rgba(1, 1, 1, 0.2);
     }
 
     @include NOT-MOBILE{
@@ -52,7 +53,7 @@
     display: block;
     text-decoration: none;
     @include is-burger(){
-      margin: 1em auto;
+      // margin: 1em auto;
       text-align: center;
     }
   }

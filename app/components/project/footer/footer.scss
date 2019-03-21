@@ -26,11 +26,20 @@
   @include TABLET{
     height: vw-t($h);
   }
+  @include MOBILE{
+    height: vw-m(233px);
+    flex-direction: column;
+    padding: vw-m(31px 0 29px);
+    box-sizing: border-box;
+  }
 
   & > *{
     width: 100%;
-    flex: 1 1 30%;
     text-align: center;
+
+    @include NOT-MOBILE{
+      flex: 1 1 30%;
+    }
   }
 
   &__hashtag{
@@ -65,6 +74,9 @@
     @include TABLET{
       width: vw-t($w);
     }
+    @include MOBILE{
+      width: vw-m($w);
+    }
   }
 
   &__hatmlacademy-span{
@@ -74,6 +86,9 @@
     }
     @include TABLET{
       margin-right: vw-t($mr);
+    }
+    @include MOBILE{
+      margin-right: vw-m($mr);
     }
   }
 }

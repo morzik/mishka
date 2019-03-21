@@ -21,11 +21,10 @@
 
   &__item{
     $w: 48px;
-    width: $w;
-    height: $w;
-    margin: vw(0 3px);
+    $m: 0 3px;
     cursor: pointer;
     background: $BLUE;
+    transition: background .3s;
     &:hover{
     background: #669ec0;
     }
@@ -39,10 +38,17 @@
     @include DESKTOP{
       width: vw($w);
       height: vw($w);
+      margin: vw($m);
     }
     @include TABLET{
       width: vw-t($w);
       height: vw-t($w);
+      margin: vw-t($m);
+    }
+    @include MOBILE{
+      width: vw-m($w);
+      height: vw-m($w);
+      margin: vw-m($m);
     }
   }
 
