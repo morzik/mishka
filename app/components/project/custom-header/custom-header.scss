@@ -13,7 +13,8 @@
   background: $WHITE;
 
   @include MOBILE{
-    height: vw-m(56px);
+    // height: vw-m(56px);
+    height: 56px;
   }
 
   &__logo {
@@ -41,15 +42,17 @@
       height: vw-t(83px);
     }
     @include MOBILE{
-      width: vw-m(102px);
-      height: vw-m(83px);
+      // width: vw-m(102px);
+      // height: vw-m(83px);
+      width: 102px;
+      height: 83px;
     }
   }
 
   &__burger {
     display: none;
-    width: vw-m(23px);
-    height: vw-m(21px);
+    // width: vw-m(23px);
+    // height: vw-m(21px);
     flex-direction: column;
     justify-content: space-between;
     margin: vw-m(20px);
@@ -57,7 +60,8 @@
     top: 0;
     right: 0;
     p{
-      height: vw-m(3px);
+      // height: vw-m(3px);
+      height: 3px;
       display: block;
       width: 100%;
       margin: 0;
@@ -73,6 +77,9 @@
 
     @include MOBILE(){
       display: flex;
+      width: 23px;
+      height: 21px;
+      margin: 18px;
     }
     @include menu-visible(){
       p{
@@ -92,17 +99,11 @@
   }
   &__wrapper {
     width: 100%;
-    //opacity: 0;
-    //transition: opacity .3s;
-    //@include menu-visible(){
-    //  opacity: 1;
-    //}
   }
 
   &__content {
     @include is-burger(){
       background: $BLUE;
-      // padding: 2em;
       color: $WHITE;
     }
   }

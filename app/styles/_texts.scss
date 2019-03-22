@@ -28,8 +28,8 @@
   text-transform: uppercase;
   font-weight: bold;
   @include MOBILE {
-    // font-size: 18px;
-    font-size: vw-m(18px);
+    font-size: 18px;
+    // font-size: vw-m(18px);
     line-height: 3;
   }
   @include DESKTOP {
