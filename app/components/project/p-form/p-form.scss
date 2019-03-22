@@ -1,0 +1,97 @@
+.p-form {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("p-form", $mod){
+      @content;
+    }
+  }
+  @mixin item-mod($mod) {
+    @include modifier("p-form__item", $mod){
+      @content;
+    }
+  }
+  text-align: center;
+
+  &__info{
+    $p: 107px 0 60px;
+    @include DESKTOP{
+      padding: vw($p);
+    }
+  }
+
+  &__form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include DESKTOP{
+      padding: vw(0 97px);
+    }
+    @include TABLET{
+      padding: vw-t(0 60px);
+    }
+  }
+
+
+  &__title{
+    width: 100%;
+    @extend %FORM-TITLE;
+    margin: 0;
+  }
+  &__text{
+    width: 100%;
+    text-align: center;
+    $m: 25px 0 0;
+    @include DESKTOP{
+      margin: vw($m);
+    }
+    @include TABLET{
+      margin: vw-t($m);
+    }
+  }
+
+  &__item{
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 100%;
+    margin: 0;
+    box-sizing: border-box;
+
+
+    &_impressions,
+    &_full-name{
+      flex-direction: column;
+      flex: 0 0 40%;
+      @include TABLET{
+        flex: 0 0 50%;
+        text-align: left;
+      }
+    }
+    &_full-name{
+      text-align: left;
+    }
+  }
+
+  &__item-title{
+    @extend %H2;
+    margin-bottom: 60px;
+  }
+
+  &__item-list{
+    display: flex;
+    justify-content: space-between;
+    @include item-mod(impressions){
+      flex-direction: column;
+      text-align: left;
+    }
+    @include item-mod(full-name){
+      flex-direction: column;
+    }
+    & > *{
+      margin-bottom: 20px;
+    }
+
+    @include TABLET{
+      flex-direction: column;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+mixin p-form(content, params)
+  .p-form&attributes(attributes)
+    +intro-block
+    .p-form__info
+      h2.p-form__title!=content.title
+      .p-form__text!=content.text
+    +p-form__form(content)
+
+mixin p-form__form(content, params)
+  form.p-form__form&attributes(attributes)
+    +pug-list(content.list, "p-form__item")
+
+mixin p-form__item(content, params)
+  .p-form__item(class=`p-form__item_${content.class}`)&attributes(attributes)
+    .p-form__item-title!=content.title
+    .p-form__item-list
+      if content.inputs
+        +pug-list(content.inputs, "input")
+      if content.textarea
+        +textarea(content.textarea)
+      if content.checkbox
+        +pug-list(content.checkbox, "checkbox")
+      if content.radio
+        +pug-list(content.radio, "checkbox")(type="radio" name="radio")

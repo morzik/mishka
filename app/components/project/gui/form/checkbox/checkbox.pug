@@ -4,7 +4,7 @@ mixin checkbox(content, params)
   -content = assign({}, content);
 
   .checkbox&attributes(attributes)
-    label.checkbox__label&attributes(attributes)
+    label.checkbox&attributes(attributes)
       input(type="checkbox" value!=content.value).checkbox__input&attributes(attr)
       .checkbox__box
       .checkbox__label!= content.label

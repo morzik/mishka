@@ -5,71 +5,101 @@
       @content;
     }
   }
+  @extend %DEFAULT;
 
-  $input-size: 24px;
-  $input-padding: 0 0.25em;
-  $input-line-height: 1.5;
+  @include DESKTOP{
+    width: vw(400px);
 
-  $border-width: 1px;
-
-
-  @function getTransform($border-width, $input-size, $input-padding, $input-line-height, $label-size, $label-margin ){
-    @return translate(
-        get-size(get-trbl($input-padding, l), $input-size) + $border-width,
-        get-size(get-trbl($input-padding, t), $input-size)
-        + get-size(($input-line-height - 1) * 0.5, $input-size)
-        + $border-width
-        + get-trbl($label-margin, b)
-        + $label-size
-      )
-      scale($input-size / $label-size);
+    &_email{
+      width: vw(480px);
+    }
   }
-  @function get-size($val, $font-size) {
-    //TODO версия для em, надо дописать версию для px
-    @return strip-unit($val) * $font-size;
-  }
+  @include TABLET{
+    width: vw-t(267px);
 
+    &_phone,
+    &_email{
+      width: 100%;
+    }
+  }
 
   &__label {
-    display: block;
+    position: relative;
+    display: flex;
+    align-items: center;
+    @include TABLET{
+      @include mod(email){
+        flex-direction: column;
+      }
+      @include mod(phone){
+        flex-direction: column;
+      }
+    }
   }
 
 
   &__input {
+
+    $p: 0 22px;
+    $p-em: 0 75px 0 22px;
+    @extend %INPUT;
     display: block;
-    border: solid $border-width #000000;
-    font-size: $input-size;
-    width: 100%;
+    background: $BASE-BG;
+    flex: 1 1 auto;
+    border: none;
     box-sizing: border-box;
-    padding: $input-padding;
-    line-height: $input-line-height;
+    width: 100%;
+
+    @include DESKTOP{
+      padding: vw($p);
+      @include mod(email){
+        padding: vw($p-em);
+      }
+      @include mod(phone){
+        padding: vw($p-em);
+      }
+    }
+    @include TABLET{
+      padding: vw-t($p);
+      @include mod(email){
+        flex: 1 1 100%;
+        padding: vw-t($p-em);
+      }
+      @include mod(phone){
+        flex: 1 1 100%;
+        padding: vw-t($p-em);
+      }
+    }
+  }
+
+  &__input-icon{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #e6e6e6;
+    $w: 57px;
+    @include DESKTOP{
+      width: vw($w);
+      height: vw($w);
+    }
+    @include TABLET{
+      width: vw-t($w);
+      height: vw-t($w);
+    }
   }
 
 
 
   &__title{
     transform-origin: 0 0;
-
-    @include mod(title-as-placeholder) {
-      opacity: 0.6;
-      display: inline-block;
-      transform: getTransform($border-width, $input-size, $input-padding, $input-line-height, $form-label__size, $form-label__margin);
-      transition: opacity, transform, transform-origin {
-        duration: 0.2s;
-        timing-function: ease-out;
-      };
+    margin: 0;
+    color: #333333;
+    white-space: nowrap;
+    @include DESKTOP{
+      padding-right: vw(18px);
     }
-    @at-root %INPUT__TITLE_INPUT {
-      transform: scale(1) translateY(0em);
-      transform-origin: -50% 100%;
-      opacity: 1;
-    }
-
-    @include mod(focus) {
-      @extend %INPUT__TITLE_INPUT;
-    }
-    @include mod(dirty) {
-      @extend %INPUT__TITLE_INPUT;
+    @include TABLET{
+      padding-right: vw-t(18px);
     }
   }
 }

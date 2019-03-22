@@ -3,18 +3,18 @@
  */
 %DEFAULT {
   font-family: $PTSans;
-  font-size: 14px;
+  $f: 14px;
   line-height: 1.7;
   text-transform: uppercase;
   color: $BLACK;
   @include DESKTOP {
-    font-size: vw(14px);
+    font-size: vw($f);
   }
   @include TABLET {
-    font-size: vw-t(14px);
+    font-size: vw-t($f);
   }
   @include MOBILE{
-    font-size: vw-m(14px);
+    font-size: vw-m($f);
   }
 }
 
@@ -23,7 +23,7 @@
  */
 %MENU {
   font-family: $PTSans;
-  font-size: 14px;
+  $f: 14px;
   line-height: 4;
   text-transform: uppercase;
   font-weight: bold;
@@ -33,10 +33,10 @@
     line-height: 3;
   }
   @include DESKTOP {
-    font-size: vw(14px);
+    font-size: vw($f);
   }
   @include TABLET {
-    font-size: vw-t(14px);
+    font-size: vw-t($f);
   }
 }
 
@@ -45,7 +45,7 @@
  */
 %FORM-TITLE {
   font-family: $PTSans;
-  font-size: 30px;
+  $f: 30px;
   line-height: 1;
   text-transform: uppercase;
   font-weight: bold;
@@ -54,10 +54,10 @@
     line-height: 1.4;
   }
   @include DESKTOP {
-    font-size: vw(30px);
+    font-size: vw($f);
   }
   @include TABLET {
-    font-size: vw-t(30px);
+    font-size: vw-t($f);
   }
 }
 
@@ -66,7 +66,7 @@
  */
 %H2 {
   font-family: $PTSans;
-  font-size: 21px;
+  $f: 21px;
   line-height: 1.23;
   text-transform: uppercase;
   font-weight: bold;
@@ -75,10 +75,10 @@
     line-height: 1.4;
   }
   @include DESKTOP {
-    font-size: vw(21px);
+    font-size: vw($f);
   }
   @include TABLET {
-    font-size: vw-t(21px);
+    font-size: vw-t($f);
   }
 }
 
@@ -87,19 +87,19 @@
  */
 %BUTTON {
   font-family: $PTSans;
-  font-size: 21px;
+  $f: 21px;
   line-height: 1;
   text-transform: uppercase;
   font-weight: bold;
   color: $WHITE;
   @include DESKTOP {
-    font-size: vw(21px);
+    font-size: vw($f);
   }
   @include TABLET {
-    font-size: vw-t(21px);
+    font-size: vw-t($f);
   }
   @include MOBILE {
-    font-size: vw-m(21px);
+    font-size: vw-m($f);
   }
 }
 
@@ -108,18 +108,60 @@
  */
 %HASHTAG {
   font-family: $PTSans;
-  font-size: 21px;
+  $f: 21px;
   line-height: 1;
   text-transform: uppercase;
   font-weight: bold;
   color: $BLACK;
   @include DESKTOP {
-    font-size: vw(21px);
+    font-size: vw($f);
   }
   @include TABLET {
-    font-size: vw-t(21px);
+    font-size: vw-t($f);
   }
   @include MOBILE {
-    font-size: vw-m(21px);
+    font-size: vw-m($f);
+  }
+}
+
+/**
+ *
+ */
+%INPUT {
+  font-family: $PTSans;
+  $f: 18px;
+  line-height: 3;
+  font-weight: bold;
+  color: $BLACK;
+  @include DESKTOP {
+    line-height: 3.2;
+    font-size: vw($f);
+  }
+  @include TABLET {
+    line-height: 3.2;
+    font-size: vw-t($f);
+  }
+  @include MOBILE {
+    font-size: vw-m($f);
+  }
+}
+
+/**
+ *
+ */
+%TEXTAREA {
+  font-family: $PTSans;
+  $f: 18px;
+  line-height: 1;
+  font-weight: bold;
+  color: $BLACK;
+  @include DESKTOP {
+    font-size: vw($f);
+  }
+  @include TABLET {
+    font-size: vw-t($f);
+  }
+  @include MOBILE {
+    font-size: vw-m($f);
   }
 }

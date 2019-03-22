@@ -1,0 +1,22 @@
+.textarea {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("textarea", $mod){
+      @content;
+    }
+  }
+  width: 100%;
+
+  &__textarea{
+    @extend %TEXTAREA;
+    width: 100%;
+    resize: none;
+    box-sizing: border-box;
+    background: $BASE-BG;
+    border: none;
+    @include DESKTOP{
+      padding: vw(22px 21px);
+      height: vw(160px);
+    }
+  }
+}
