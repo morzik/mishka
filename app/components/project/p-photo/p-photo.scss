@@ -199,9 +199,42 @@
     align-items: center;
     padding: 40px;
     text-align: center;
+
+    @include DESKTOP{
+      padding: vw(72px 0 85px);
+    }
+    @include TABLET{
+      padding: vw-t(68px 0 40px);
+    }
+    @include MOBILE{
+      padding: vw-m(39px 0 49px);
+    }
   }
   &__bonus-title{
     @extend %H2;
     margin: 0;
+  }
+
+  &__bonus-text{
+    $m: 20px 0 76px;
+    $w: 400px;
+    @include DESKTOP{
+      width: vw($w);
+      margin: vw($m);
+    }
+    @include TABLET{
+      width: vw-t($w);
+      margin: vw-t($m);
+    }
+    @include MOBILE{
+      width: vw-m(280px);
+      margin: vw-m(20px 0 40px);
+    }
+  }
+
+  &__video{
+    // @include DESKTOP{
+    //   margin-top: vw(76px);
+    // }
   }
 }

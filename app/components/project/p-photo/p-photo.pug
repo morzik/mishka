@@ -27,4 +27,4 @@ mixin p-photo__bonus(content, params)
   .p-photo__bonus&attributes(attributes)
     h2.p-photo__bonus-title!=content.title
     .p-photo__bonus-text!=content.text
-    +video(content.video)
+    +video(content.video).p-photo__video

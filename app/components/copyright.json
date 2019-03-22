@@ -131,10 +131,7 @@
     "bonus":{
       "title":"Все еще сомневаетесь?",
       "text":"Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!",
-      "video":{
-        "poster":"data/video/sedona-v.png",
-        "src":""
-      }
+      "video":"https://www.youtube.com/embed/X66x99zE1K8"
     }
   },
 
