@@ -141,10 +141,12 @@
     "list":[
       {
         "class":"impressions",
+        "size":"small",
         "title":"Ваше общее впечатление:",
         "radio":[
           {
-            "label":"Скорее положительное"
+            "label":"Скорее положительное",
+            "checked":"true"
           },
           {
             "label":"Скорее отрицательное"
@@ -156,40 +158,50 @@
       },
       {
         "class":"full-name",
+        "size":"small",
         "title":"Представьтесь, пожалуйста:",
         "inputs":[
           {
             "title":"Имя:",
+            "type":"simple",
             "placeholder":"Ваше имя"
           },
           {
             "title":"Фамилия:",
+            "type":"simple",
             "placeholder":"Ваша фамилия"
           },
           {
             "title":"Отчество:",
+            "type":"simple",
             "placeholder":"Ваше отчество"
           }
         ]
       },
       {
         "class":"contacts",
+        "size":"big",
         "title":"Контактная информация:",
         "inputs":[
           {
             "title":"телефон:",
+            "type":"phone",
+            "error":"error",
             "placeholder":"Введите номер",
-            "icon":"phone"
+            "icon":"images/phone.svg"
           },
           {
             "title":"Электронная почта:",
+            "type":"email",
+            "error":"error",
             "placeholder":"Введите e-mail",
-            "icon":"email"
+            "icon":"images/email.svg"
           }
         ]
       },
       {
         "class":"attractions",
+        "size":"big",
         "title":"посещенные достопримечательности:",
         "checkbox":[
           {
@@ -208,6 +220,7 @@
       },
       {
         "class":"emotions",
+        "size":"big",
         "title":"опишите свои эмоции:",
         "textarea":"Опишите подробное ваши впечатления"
       }

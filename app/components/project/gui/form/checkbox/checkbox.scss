@@ -16,9 +16,23 @@
     }
   }
 
-  position: relative;
-  display: flex;
-  align-items: center;
+
+  @include DESKTOP{
+    margin: vw(10px 0);
+  }
+  @include TABLET{
+    flex: 0 0 40%;
+    margin: vw-t(10px 0);
+  }
+  @include MOBILE{
+    margin: vw-m(5px 0);
+  }
+
+  &__wrap{
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
 
   &__input{
     width: 1px;
@@ -61,6 +75,11 @@
       width: vw-t($w);
       height: vw-t($w);
       margin-right: vw-t($mr);
+    }
+    @include MOBILE{
+      width: vw-m(55px);
+      height: vw-m(55px);
+      margin-right: vw-m($mr);
     }
 
     @include radio(){

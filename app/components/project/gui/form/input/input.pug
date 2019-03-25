@@ -13,12 +13,13 @@ mixin input(content, params)
     -delete attr.placeholder
     -attributes["class"] = (attributes["class"] || '') + ' input_title-as-placeholder';
 
-  .input(class=`input_${content.icon}`)&attributes(attributes)
+  .input(class=`input_${content.type}`)&attributes(attributes)
     label.input__label
       +form-label(content).input__title
       #{content.tag}.input__input&attributes(attr)
       if content.icon
         .input__input-icon
-    +form-error
+          img(src=content.icon)
+    +form-error.input__error!=content.error
 
     block

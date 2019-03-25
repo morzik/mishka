@@ -1,6 +1,6 @@
 mixin p-form(content, params)
   .p-form&attributes(attributes)
-    +intro-block
+    //- +intro-block
     .p-form__info
       h2.p-form__title!=content.title
       .p-form__text!=content.text
@@ -9,10 +9,12 @@ mixin p-form(content, params)
 mixin p-form__form(content, params)
   form.p-form__form&attributes(attributes)
     +pug-list(content.list, "p-form__item")
+    +button.p-form__button отправить отзыв
 
 mixin p-form__item(content, params)
-  .p-form__item(class=`p-form__item_${content.class}`)&attributes(attributes)
-    .p-form__item-title!=content.title
+  .p-form__item(class=`p-form__item_${content.size} p-form__item_${content.class}`)&attributes(attributes)
+    .p-form__item-title
+      span!=content.title
     .p-form__item-list
       if content.inputs
         +pug-list(content.inputs, "input")

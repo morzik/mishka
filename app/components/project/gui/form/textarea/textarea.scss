@@ -6,17 +6,34 @@
     }
   }
   width: 100%;
+  $h: 160px;
+  @include DESKTOP{
+    height: vw($h);
+  }
+  @include TABLET{
+    height: vw-t($h);
+  }
+  @include MOBILE{
+    height: vw-m($h);
+  }
 
   &__textarea{
     @extend %TEXTAREA;
     width: 100%;
+    height: 100%;
     resize: none;
     box-sizing: border-box;
     background: $BASE-BG;
     border: none;
+    $p: 22px 21px;
     @include DESKTOP{
-      padding: vw(22px 21px);
-      height: vw(160px);
+      padding: vw($p);
+    }
+    @include TABLET{
+      padding: vw-t($p);
+    }
+    @include MOBILE{
+      padding: vw-m($p);
     }
   }
 }

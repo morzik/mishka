@@ -14,6 +14,7 @@
   overflow: hidden;
   background: image("index/bg.jpg") no-repeat center bottom / cover;
   $h: 301px;
+  transition: height .3s;
 
   @include DESKTOP {
     height: vw($h);

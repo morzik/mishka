@@ -5,35 +5,40 @@
       @content;
     }
   }
-  @extend %DEFAULT;
-
+  position: relative;
   @include DESKTOP{
     width: vw(400px);
+    margin: vw(10px 0);
 
     &_email{
       width: vw(480px);
     }
   }
   @include TABLET{
-    width: vw-t(267px);
+    width: 100%;
+    margin: vw-t(10px 0);
 
-    &_phone,
-    &_email{
-      width: 100%;
+    &_simple{
+      width: vw-t(267px);
     }
+  }
+  @include MOBILE{
+    margin: vw-m(10px 0);
   }
 
   &__label {
     position: relative;
     display: flex;
     align-items: center;
-    @include TABLET{
-      @include mod(email){
-        flex-direction: column;
-      }
-      @include mod(phone){
-        flex-direction: column;
-      }
+    flex-direction: column;
+    align-items: flex-start;
+    @include mod(simple){
+      flex-direction: row;
+      align-items: center;
+    }
+    @include DESKTOP{
+      flex-direction: row;
+      align-items: center;
     }
   }
 
@@ -51,23 +56,21 @@
     width: 100%;
 
     @include DESKTOP{
-      padding: vw($p);
-      @include mod(email){
-        padding: vw($p-em);
-      }
-      @include mod(phone){
-        padding: vw($p-em);
+      padding: vw($p-em);
+      @include mod(simple){
+        padding: vw($p);
       }
     }
     @include TABLET{
-      padding: vw-t($p);
-      @include mod(email){
-        flex: 1 1 100%;
-        padding: vw-t($p-em);
+      padding: vw-t($p-em);
+      @include mod(simple){
+        padding: vw-t($p);
       }
-      @include mod(phone){
-        flex: 1 1 100%;
-        padding: vw-t($p-em);
+    }
+    @include MOBILE{
+      padding: vw-m($p-em);
+      @include mod(simple){
+        padding: vw-m($p);
       }
     }
   }
@@ -77,29 +80,66 @@
     bottom: 0;
     right: 0;
     background: #e6e6e6;
-    $w: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    $w: 56px;
     @include DESKTOP{
       width: vw($w);
       height: vw($w);
     }
     @include TABLET{
-      width: vw-t($w);
-      height: vw-t($w);
+      width: vw-t(56px);
+      height: vw-t(56px);
+    }
+    @include MOBILE{
+      width: vw-m(53px);
+      height: vw-m(53px);
+    }
+
+    img{
+      width: 32%;
+      height: 32%;
     }
   }
 
 
 
   &__title{
-    transform-origin: 0 0;
-    margin: 0;
-    color: #333333;
     white-space: nowrap;
+    $p: 0 18px 0 0;
     @include DESKTOP{
-      padding-right: vw(18px);
+      padding: vw($p);
     }
     @include TABLET{
-      padding-right: vw-t(18px);
+      padding: vw-t(0 18px 15px);
+    }
+    @include MOBILE{
+      padding: vw-m(0 18px 12px);
+    }
+    @include mod(simple){
+      @include TABLET{
+        padding: vw-t($p);
+      }
+      @include MOBILE{
+        padding: vw-m($p);
+      }
+    }
+  }
+
+  &__error{
+    display: none;
+    position: absolute;
+    top: -2em;
+    right: 0;
+    text-align: left;
+    @include DESKTOP{
+      @include mod(email){
+        width: vw(348px);
+      }
+      @include mod(phone){
+        width: vw(329px);
+      }
     }
   }
 }
