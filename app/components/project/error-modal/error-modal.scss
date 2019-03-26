@@ -1,0 +1,10 @@
+.error-modal {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("error-modal", $mod){
+      @content;
+    }
+  }
+
+  // width: 400px;
+}

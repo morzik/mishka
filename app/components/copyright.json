@@ -16,15 +16,15 @@
   "menu": [
     {
       "label": "Главная",
-      "href": "index"
+      "href": "#index"
     },
     {
       "label": "ФОТО И ВИДЕО",
-      "href": "/photo"
+      "href": "#photo"
     },
     {
       "label": "Форма отзыва",
-      "href": "/feedback"
+      "href": "#feedback"
     },
     {
       "label": "HTML Academy",

@@ -12,6 +12,14 @@
   }
   background: $WHITE;
 
+  @include NOT-MOBILE{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+
   @include MOBILE{
     // height: vw-m(56px);
     height: 56px;

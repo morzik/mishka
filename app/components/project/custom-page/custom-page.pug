@@ -16,13 +16,10 @@ append body_before
 
 
 append modal
-  //-
-    +custom-modal(copyright.modalStory)(id="modal-story")
-    +custom-modal(copyright.modal, {"isGallery": true})(id="modal-gallery")
-    +custom-modal(copyright.modalMemorial, {"isMemorial": true})(id="modal-memorial")
-    +custom-modal(copyright.modalMap, {"isMap": true})(id="modal-map")
-    +custom-modal(copyright.modalImage, {"isImage": true})(id="modal-image")
-
+  +custom-modal()#success-modal.custom-modal_border.custom-modal_success-modal
+    +success-modal()
+  +custom-modal()#error-modal.custom-modal_border.custom-modal_error-modal
+    +error-modal()
 
 block page
   input(type="checkbox" id="menu-burger")

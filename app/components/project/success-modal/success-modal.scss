@@ -1,0 +1,16 @@
+.success-modal {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("success-modal", $mod){
+      @content;
+    }
+  }
+  // width: 640px;
+
+  &__title{
+    @extend %H2;
+  }
+  &__text{
+    @extend %DEFAULT;
+  }
+}

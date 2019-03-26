@@ -1,6 +1,5 @@
 mixin p-form(content, params)
-  .p-form&attributes(attributes)
-    //- +intro-block
+  .p-form(id=content.id)&attributes(attributes)
     .p-form__info
       h2.p-form__title!=content.title
       .p-form__text!=content.text

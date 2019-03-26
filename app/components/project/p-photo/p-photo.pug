@@ -1,6 +1,5 @@
 mixin p-photo(content, params)
-  .p-photo&attributes(attributes)
-    //- +intro-block
+  .p-photo(id=content.id)&attributes(attributes)
     +p-photo__info(content.info)
     .p-photo__gallery
       +pug-list(content.gallery, "p-photo__item")

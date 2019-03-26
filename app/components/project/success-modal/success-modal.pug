@@ -1,0 +1,5 @@
+mixin success-modal(content, params)
+  .success-modal&attributes(attributes)
+    .success-modal__title Ваш отзыв отправлен!
+    .success-modal__text Спасибо за&nbsp;ваше участие, ваш отзыв уже поступил к&nbsp;нам. В&nbsp;ближайшее время мы&nbsp;опубликуем его на&nbsp;сайте.
+    +button()(data-modal-close="").success-modal__button закрыть окно

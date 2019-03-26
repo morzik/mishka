@@ -1,16 +1,21 @@
 @import "../../framework/page/page";
 
 .custom-page {
-  min-height: 100vh;
+  @extend %DEFAULT;
   position: relative;
   height: auto;
-  @extend %DEFAULT;
+  min-height: 100vh;
   background: $WHITE;
 
+
   @include DESKTOP{
+    padding-top: vw(57px);
     width: vw(1200px);
     margin: auto;
     box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
+  }
+  @include TABLET{
+    padding-top: vw-t(56px);
   }
 }
 

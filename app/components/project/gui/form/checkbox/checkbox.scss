@@ -5,6 +5,11 @@
       @content;
     }
   }
+  @mixin hover{
+    .checkbox:hover & {
+      @content;
+    }
+  }
   @mixin checked(){
     .checkbox__input:checked ~ & {
       @content;
@@ -63,6 +68,7 @@
     box-sizing: border-box;
     border-radius: 5px;
     background: $BASE-BG;
+    transition: background .3s;
     $w: 57px;
     $mr: 20px;
 
@@ -85,6 +91,11 @@
     @include radio(){
       border-radius: 50%;
     }
+
+    @include hover{
+      background: #e5e5e5;
+    }
+
 
     &::before {
       content: '';
