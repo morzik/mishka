@@ -8,3 +8,4 @@ import './gui/gui';
 
 // Страницы
 //-require('./p-example/p-example');
+require('./spa/spa');

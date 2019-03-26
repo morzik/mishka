@@ -1,0 +1,8 @@
+.spa {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("spa", $mod){
+      @content;
+    }
+  }
+}

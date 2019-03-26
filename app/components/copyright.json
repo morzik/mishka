@@ -1,37 +1,39 @@
 {
   "og": {
-      "title": "<?= $share->text ?>",
-      "description": "<?= $share->description ?>",
-      "canonical_url": "<?= $share->canonical_url ?>",
-      "fb_app_id": "",
-      "image": {
-          "default": {
-              "val": "<?= base_url('/' . $share->image) ?>",
-              "width": 1200,
-              "height": 628
-          }
+    "title": "<?= $share->text ?>",
+    "description": "<?= $share->description ?>",
+    "canonical_url": "<?= $share->canonical_url ?>",
+    "fb_app_id": "",
+    "image": {
+      "default": {
+        "val": "<?= base_url('/' . $share->image) ?>",
+        "width": 1200,
+        "height": 628
       }
+    }
   },
 
-  "menu": [{
-          "label": "Главная",
-          "href": "index"
-      },
-      {
-          "label": "ФОТО И ВИДЕО",
-          "href": "/photo"
-      },
-      {
-          "label": "Форма отзыва",
-          "href": "/feedback"
-      },
-      {
-          "label": "HTML Academy",
-          "href": "https://htmlacademy.ru/"
-      }
+  "menu": [
+    {
+      "label": "Главная",
+      "href": "index"
+    },
+    {
+      "label": "ФОТО И ВИДЕО",
+      "href": "/photo"
+    },
+    {
+      "label": "Форма отзыва",
+      "href": "/feedback"
+    },
+    {
+      "label": "HTML Academy",
+      "href": "https://htmlacademy.ru/"
+    }
   ],
 
   "pIndex": {
+    "id":"index",
     "info": {
       "title": "СЕДОНА&nbsp;&mdash; небольшой городок в&nbsp;АРИЗОНЕ, зАСЛУЖИвающий большего!",
       "subtitle": "Рассмотрим 5 причин, по которым Седона круче чем гранд каньон!",
@@ -94,6 +96,7 @@
   },
 
   "pPhoto":{
+    "id":"photo",
     "info":{
       "title":"Фото и видео",
       "text":"Не можете решиться на путешествие из-за курса? Фотографии помогут вам забыть о политике и экономике."
@@ -136,6 +139,7 @@
   },
 
   "pForm":{
+    "id":"feedback",
     "title":"Оставьте свой отзыв",
     "text":"Помогите нашим отелям стать лучше! оставьте отзыв о них, <br>а также о посещенных вами достопримечательностях",
     "list":[
