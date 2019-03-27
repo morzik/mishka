@@ -57,11 +57,11 @@
   }
   &__quote,
   &__subtitle{
-    display: none;
+    opacity: 0;
+    transition: opacity .3s;
 
     @include mod(index){
-      display: block;
-      animation: fade-in .3s ease-in-out;
+      opacity: 1;
     }
   }
 

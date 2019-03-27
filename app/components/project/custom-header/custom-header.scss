@@ -20,6 +20,11 @@
     z-index: 1;
   }
 
+  @include DESKTOP{
+    width: vw(1200px);
+    margin: auto;
+    box-shadow: 0 0px 5px -3px black;
+  }
   @include MOBILE{
     // height: vw-m(56px);
     height: 56px;
