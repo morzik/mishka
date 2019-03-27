@@ -66,10 +66,10 @@
   }
 
   &__line{
-    $h: 57px;
+    $h: 58px;
     position: absolute;
     width: 100%;
-    bottom: -0.5px;
+    bottom: 0;
     left: 0;
     right: 0;
     overflow: hidden;
@@ -80,7 +80,7 @@
       left: 50%;
       transform: translate(-50%, 0);
       display: block;
-      height: 101%;
+      height: 100%;
     }
     @include DESKTOP {
       height: vw($h);
