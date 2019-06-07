@@ -17,8 +17,12 @@
       }
     }
   }
-  // display: none;
+  display: none;
   user-select: none;
+
+  .custom-page_photo &{
+    display: block;
+  }
 
   &__info{
     text-align: center;

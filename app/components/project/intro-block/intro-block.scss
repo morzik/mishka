@@ -26,7 +26,7 @@
     height: vw-m(158px);
   }
 
-  &_index{
+  .custom-page_index &{
     $h:518px;
     @include DESKTOP {
       height: vw($h);
@@ -60,7 +60,7 @@
     opacity: 0;
     transition: opacity .3s;
 
-    @include mod(index){
+    .custom-page_index &{
       opacity: 1;
     }
   }

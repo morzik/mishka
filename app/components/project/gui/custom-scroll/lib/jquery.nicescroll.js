@@ -1,4 +1,5 @@
-import $ from '../../../../vendor/jquery';
+// import $ from '../../../../vendor/jquery';
+import $ from 'jquery';
 
 "use strict";
 

@@ -1,5 +1,5 @@
 mixin p-index(content, params)
-  .p-index(id=content.id)&attributes(attributes)
+  .p-index(id=content.id data-id=content.id)&attributes(attributes)
     +p-index__info(content.info)
     +p-index__form(content.form)
     .p-index__map

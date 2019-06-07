@@ -10,8 +10,12 @@
       @content;
     }
   }
-  // display: none;
+  display: none;
   text-align: center;
+
+  .custom-page_feedback &{
+    display: block;
+  }
 
   &__info{
     @include DESKTOP{
