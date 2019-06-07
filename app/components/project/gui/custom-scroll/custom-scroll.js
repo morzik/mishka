@@ -18,8 +18,8 @@ class CustomScroll{
       cursorborder: "none",
       cursorborderradius: "7px",
       background:"#e3e3e3",
-      scrollspeed: 100,
-      mousescrollstep: 50,
+      scrollspeed: 200,
+      mousescrollstep: 100,
       enableobserver: false
     });
 

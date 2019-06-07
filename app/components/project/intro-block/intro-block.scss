@@ -60,7 +60,7 @@
     opacity: 0;
     transition: opacity .3s;
 
-    @include mod(index){
+    .custom-page_index &{
       opacity: 1;
     }
   }

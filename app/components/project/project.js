@@ -5,6 +5,5 @@ import './gui/gui';
 // require('./custom-modal/custom-modal');
 
 // Блоки
-
 // Страницы
 require('./spa/spa');
