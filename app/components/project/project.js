@@ -7,5 +7,4 @@ import './gui/gui';
 // Блоки
 
 // Страницы
-//-require('./p-example/p-example');
 require('./spa/spa');

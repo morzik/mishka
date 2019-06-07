@@ -16,6 +16,7 @@
     width: 100%;
     text-align: center;
     transition: color .3s;
+    user-select: none;
     @include is-burger(){
       display: block;
       margin: auto;
@@ -52,6 +53,7 @@
   &__item-link {
     display: block;
     text-decoration: none;
+    cursor: pointer;
     @include is-burger(){
       // margin: 1em auto;
       text-align: center;
