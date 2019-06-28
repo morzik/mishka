@@ -40,12 +40,12 @@ const DEBUG = {
 const RELEASE = _.assign({}, DEBUG, {
   // oAuth: false,
   debug: false,
-  php: true,
+  php: false,
   release: true
 });
 const DEV = _.assign({}, RELEASE, {
   oAuth: true,
-  //TODO подставить id проекта
+  //TODO ГЇГ®Г¤Г±ГІГ ГўГЁГІГј id ГЇГ°Г®ГҐГЄГІГ 
   base_url: base_url('/2019/190217/')
 });
 

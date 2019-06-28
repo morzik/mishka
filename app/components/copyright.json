@@ -1,12 +1,12 @@
 {
   "og": {
-    "title": "<?= $share->text ?>",
-    "description": "<?= $share->description ?>",
-    "canonical_url": "<?= $share->canonical_url ?>",
+    "title": "",
+    "description": "",
+    "canonical_url": "",
     "fb_app_id": "",
     "image": {
       "default": {
-        "val": "<?= base_url('/' . $share->image) ?>",
+        "val": "",
         "width": 1200,
         "height": 628
       }
