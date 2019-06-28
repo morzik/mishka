@@ -48,9 +48,12 @@
 
 
   &__title{
-    width: 100%;
     @extend %FORM-TITLE;
+    width: 100%;
     $m: 25px 0;
+    @include NOT-MOBILE{
+      animation: fade-in-bottom .3s both ease-in-out 0.1s;
+    }
     @include DESKTOP{
       margin: vw($m);
     }
@@ -64,6 +67,9 @@
   &__text{
     width: 100%;
     text-align: center;
+    @include NOT-MOBILE{
+      animation: fade-in-bottom .3s both ease-in-out 0.3s;
+    }
 
     @include MOBILE{
       br{
@@ -76,6 +82,13 @@
     flex: 0 0 100%;
     margin: 0;
     box-sizing: border-box;
+    @include NOT-MOBILE{
+      @for $i from 1 through 5{
+        &:nth-of-type(#{$i}){
+          animation: fade-in-bottom 1s 0.5s*$i ease-in-out both;
+        }
+      }
+    }
 
     &_small{
       flex: 0 0 40%;

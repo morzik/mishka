@@ -53,12 +53,16 @@
   &__info-title{
     @extend %H2;
     margin: 0;
-    animation: fade-in-bottom .3s both ease-in-out 0.1s;
+    @include NOT-MOBILE{
+      animation: fade-in-bottom .3s both ease-in-out 0.1s;
+    }
   }
 
   &__info-subtitle{
     $mt:20px;
-    animation: fade-in-bottom .3s both ease-in-out 0.3s;
+    @include NOT-MOBILE{
+      animation: fade-in-bottom .3s both ease-in-out 0.3s;
+    }
     @include DESKTOP {
       margin-top: vw($mt);
     }
@@ -131,7 +135,9 @@
   &__map-title{
     @extend %FORM-TITLE;
     text-align: center;
-    animation: fade-in-top .3s 3s ease-in-out both;
+    @include NOT-MOBILE{
+      animation: fade-in-top .3s 3s ease-in-out both;
+    }
     margin-bottom: vw(25px);
     @include TABLET {
       margin-bottom: vw-t(25px);
