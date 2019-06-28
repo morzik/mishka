@@ -52,10 +52,12 @@
   &__info-title{
     @extend %H2;
     margin: 0;
+    animation: fade-in-bottom .3s both 0.1s;
   }
 
   &__info-subtitle{
     $mt:20px;
+    animation: fade-in-bottom .3s both 0.3s;
     @include DESKTOP {
       margin-top: vw($mt);
     }

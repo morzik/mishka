@@ -33,6 +33,39 @@
     transform: translate(0);
   }
 }
+@keyframes fade-in-bottom {
+  0% {
+    opacity: 0;
+    transform: translate(0, 10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translate(100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translate(-100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
 
 //%SHAKE {
 //  @include shake-animation(SCALE-SHAKE, .025, 1, 1.0s);

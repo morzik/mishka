@@ -1,6 +1,6 @@
 mixin custom-menu__item(content, params)
   +pug-if(content, 'inactive', true)
-    li.custom-menu__item: a(href=content.href target=content.target data-id=content.dataId data-navigo).custom-menu__item-link!= content.label
+    li.custom-menu__item(class=`custom-menu__item_${content.dataId}`): a(href=content.href target=content.target data-id=content.dataId data-navigo).custom-menu__item-link!= content.label
 
 mixin custom-menu(content, params)
   ul.custom-menu
