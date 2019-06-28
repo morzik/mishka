@@ -112,12 +112,14 @@
     ]
   },
   "dependencies": {
+    "animate.css": "^3.7.2",
     "flickity": "latest",
     "handlebars": "^4.1.2",
     "jquery": "^3.4.1",
     "navigo": "latest",
     "normalize.css": "latest",
     "scroll-parallax": "^3.0.3",
-    "tingle.js": "latest"
+    "tingle.js": "latest",
+    "wow.js": "^1.2.2"
   }
 }

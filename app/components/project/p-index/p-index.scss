@@ -11,6 +11,7 @@
     }
   }
   display: none;
+  overflow-x: hidden;
 
   .custom-page_index &{
     display: block;
@@ -52,12 +53,12 @@
   &__info-title{
     @extend %H2;
     margin: 0;
-    animation: fade-in-bottom .3s both 0.1s;
+    animation: fade-in-bottom .3s both ease-in-out 0.1s;
   }
 
   &__info-subtitle{
     $mt:20px;
-    animation: fade-in-bottom .3s both 0.3s;
+    animation: fade-in-bottom .3s both ease-in-out 0.3s;
     @include DESKTOP {
       margin-top: vw($mt);
     }
@@ -85,17 +86,6 @@
   }
 
 
-  &__map-title{
-    @extend %FORM-TITLE;
-    text-align: center;
-    margin-bottom: vw(25px);
-    @include TABLET {
-      margin-bottom: vw-t(25px);
-    }
-    @include MOBILE {
-      margin-bottom: vw-m(25px);
-    }
-  }
 
   &__form-text{
     @include DESKTOP {
@@ -112,6 +102,7 @@
   &__map{
     width: 100%;
     text-align: center;
+    overflow: hidden;
     @include DESKTOP {
       padding: vw(57px 0 0);
     }
@@ -135,6 +126,18 @@
         height: vw-m($h);
       }
     }
+  }
 
+  &__map-title{
+    @extend %FORM-TITLE;
+    text-align: center;
+    animation: fade-in-top .3s 3s ease-in-out both;
+    margin-bottom: vw(25px);
+    @include TABLET {
+      margin-bottom: vw-t(25px);
+    }
+    @include MOBILE {
+      margin-bottom: vw-m(25px);
+    }
   }
 }

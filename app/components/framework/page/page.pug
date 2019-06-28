@@ -17,9 +17,10 @@ block functions
 
 block mixins
   mixin stylesheet(href)
-    link(rel="preload" href=base_url(href) as="style" onload="this.onload=null;this.rel='stylesheet'")
+    link(rel="stylesheet" href=base_url(href))
     noscript
-      link(rel="stylesheet" href=base_url(href))
+      link(rel="preload" href=base_url(href) as="style" onload="this.onload=null;this.rel='stylesheet'")
+    link(rel="stylesheet" href="animate.min.css")
   mixin script(src)
     script(src=src defer)&attributes(attributes)
 

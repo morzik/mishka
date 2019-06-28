@@ -42,6 +42,11 @@
         // height: 100%;
         width: 100%;
         transform: translate(-50%, -50%);
+
+        @include MOBILE{
+          height: 100%;
+          width: auto;
+        }
     }
     &__svg {
         position: relative;

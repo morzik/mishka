@@ -112,6 +112,10 @@
   }
   &__wrapper {
     width: 100%;
+
+    @include NOT-DESKTOP{
+      width: 100vw;
+    }
   }
 
   &__content {
