@@ -68,7 +68,8 @@
     "@babel/polyfill": "latest",
     "@babel/preset-env": "latest",
     "babelify": "latest",
-    "browser-sync": "latest",
+    "backstopjs": "latest",
+    "browser-sync": "^2.26.7",
     "browserify": "latest",
     "del": "latest",
     "event-stream": "latest",
@@ -79,7 +80,7 @@
     "gulp-eslint": "latest",
     "gulp-filter": "latest",
     "gulp-if": "latest",
-    "gulp-load-plugins": "latest",
+    "gulp-load-plugins": "^1.6.0",
     "gulp-notify": "latest",
     "gulp-plumber": "latest",
     "gulp-pug": "latest",
@@ -87,24 +88,23 @@
     "gulp-rename": "latest",
     "gulp-replace": "latest",
     "gulp-sass": "latest",
+    "gulp-sftp": "latest",
     "gulp-sourcemaps": "latest",
     "gulp-svg-symbols": "latest",
     "gulp-uglify": "latest",
     "gulp-watch": "latest",
     "html-entities": "latest",
     "http-proxy-middleware": "latest",
-    "lodash": "latest",
-    "gulp-sftp": "latest",
-    "vinyl-ftp": "latest",
-    "yargs": "latest",
-    "backstopjs": "latest",
     "jstransformer-markdown-it": "latest",
+    "lodash": "latest",
     "markdown-it-attrs": "latest",
     "markdown-it-highlight": "latest",
     "run-sequence": "latest",
     "vinyl-buffer": "latest",
+    "vinyl-ftp": "latest",
     "vinyl-source-stream": "latest",
-    "watchify": "latest"
+    "watchify": "latest",
+    "yargs": "latest"
   },
   "browserify": {
     "transform": [
@@ -113,10 +113,11 @@
   },
   "dependencies": {
     "flickity": "latest",
-    "handlebars": "latest",
-    "jquery": "latest",
+    "handlebars": "^4.1.2",
+    "jquery": "^3.4.1",
     "navigo": "latest",
     "normalize.css": "latest",
+    "scroll-parallax": "^3.0.3",
     "tingle.js": "latest"
   }
 }
