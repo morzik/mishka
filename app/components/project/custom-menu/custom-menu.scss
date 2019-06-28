@@ -37,6 +37,9 @@
         color: rgba($BLACK,0.3);
       }
 
+      .custom-page_index &_index,
+      .custom-page_photo &_photo,
+      .custom-page_feedback &_feedback,
       &_active{
         color: #766357;
         &:hover{
@@ -47,6 +50,7 @@
         }
       }
     }
+
 
   }
 
