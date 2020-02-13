@@ -210,11 +210,14 @@
     background: $WHITE;
     color: $BLACK;
 
-    @for $i from 1 through 3{
-      &:nth-of-type(#{$i}){
-        animation: fade-in-top 0.5s 1s+0.2s*$i ease-in-out both;
+    @include scroll-in{
+      @for $i from 1 through 3{
+        &:nth-of-type(#{$i}){
+          animation: fade-in-top 0.5s 1s+0.2s*$i ease-in-out both;
+        }
       }
     }
+
 
     @include MOBILE{
       padding: $pm;

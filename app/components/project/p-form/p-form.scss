@@ -19,14 +19,8 @@
   }
 
   &__info{
-    @include DESKTOP{
-      padding: vw(92px 0 60px);
-    }
-    @include TABLET{
-      padding: vw-t(71px 0);
-    }
+    @include option(padding, 92 0 62, 0 20 20, 71 0);
     @include MOBILE{
-      padding: vw-m(0 20px 20px);
       box-sizing: border-box;
     }
   }
@@ -35,12 +29,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    @include DESKTOP{
-      padding: vw(0 97px);
-    }
-    @include TABLET{
-      padding: vw-t(0 60px);
-    }
+    @include option(padding, 0 97, 0, 0 60);
     @include MOBILE{
       flex-direction: column;
     }
@@ -51,23 +40,16 @@
     @extend %FORM-TITLE;
     width: 100%;
     $m: 25px 0;
-    @include NOT-MOBILE{
+    @include scroll-in{
       animation: fade-in-bottom .3s both ease-in-out 0.1s;
     }
-    @include DESKTOP{
-      margin: vw($m);
-    }
-    @include TABLET{
-      margin: vw-t($m);
-    }
-    @include MOBILE{
-      margin: vw-m(41px 0 30px);
-    }
+    @include option(margin, 25 0, 41px 0 30px);
   }
+
   &__text{
     width: 100%;
     text-align: center;
-    @include NOT-MOBILE{
+    @include scroll-in{
       animation: fade-in-bottom .3s both ease-in-out 0.3s;
     }
 
@@ -82,7 +64,7 @@
     flex: 0 0 100%;
     margin: 0;
     box-sizing: border-box;
-    @include NOT-MOBILE{
+    @include scroll-in{
       @for $i from 1 through 5{
         &:nth-of-type(#{$i}){
           animation: fade-in-bottom 1s 0.5s*$i ease-in-out both;
@@ -123,6 +105,7 @@
       margin: vw-m(20px 0);
     }
     @include item-mod(big){
+      //@include option();
       @include DESKTOP{
         margin: vw(40px 0);
       }

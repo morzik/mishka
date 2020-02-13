@@ -26,45 +26,24 @@
   }
 
   &__info{
+    @include option(width, 428, auto);
+    margin: auto;
+    @include option(padding, 113 0 77, 44 22 33, 76 0);
     text-align: center;
     box-sizing: border-box;
-
-    @include DESKTOP{
-      padding: vw(113px 0px 77px);
-      width: vw(428px);
-      margin: auto;
-    }
-    @include TABLET{
-      padding: vw-t(76px 0px);
-      width: vw-t(428px);
-      margin: auto;
-    }
-    @include MOBILE{
-      padding: vw-m(44px 20px 33px);
-    }
   }
 
   &__info-title{
     @extend %H2;
     margin: 0;
-    @include NOT-MOBILE{
+    @include scroll-in{
       animation: fade-in-bottom .3s both 0.1s;
     }
   }
   &__info-text{
-    $m:20px;
-
-    @include NOT-MOBILE{
+    @include option(margin-top, 20px);
+    @include scroll-in{
       animation: fade-in-bottom .3s both 0.2s;
-    }
-    @include DESKTOP{
-      margin-top: vw($m);
-    }
-    @include TABLET{
-      margin-top: vw-t($m);
-    }
-    @include MOBILE{
-      margin-top: vw-m($m);
     }
   }
   &__gallery{
@@ -95,10 +74,8 @@
     }
     @include TABLET{
       flex: 0 1 50%;
-      // height: vw-t(267px);
       &_big{
         flex: 1 1 100%;
-        // height: vw-t(400px);
       }
     }
     @include MOBILE{
@@ -107,7 +84,7 @@
       border-top: 1px solid #b2b2b2;
     }
 
-    @include NOT-MOBILE{
+    @include scroll-in{
       @for $i from 1 through 4{
         &:nth-of-type(#{$i}){
           animation: fade-in-left 1s 0.5s*$i ease-in-out both;
@@ -178,43 +155,25 @@
 
   &__likes{
     display: flex;
-
     @include NOT-MOBILE{
       position: absolute;
     }
-    @include DESKTOP{
-      right: vw(22px);
-      top: vw(33px);
-    }
-    @include TABLET{
-      right: vw-t(22px);
-      top: vw-t(33px);
-    }
-
+    @include option(top, 33, auto);
+    @include option(right, 22, auto);
   }
-  &__likes-icon{
-    $w: 24px;
-    $h: 22px;
-    $m: 9px;
 
+  &__likes-icon{
+    @include option(width, 24);
+    @include option(height, 22);
+    @include option(margin-right, 9);
     @include MOBILE{
       fill: #b2b2b2;
-      width: vw-m($w);
-      height: vw-m($h);
-      margin-right: vw-m($m);
     }
     @include TABLET{
       fill: #b2b2b2;
-      width: vw-t($w);
-      height: vw-t($h);
-      margin-right: vw-t($m);
     }
-
     @include DESKTOP{
       fill: $WHITE;
-      width: vw($w);
-      height: vw($h);
-      margin-right: vw($m);
     }
   }
 
@@ -224,51 +183,28 @@
     align-items: center;
     padding: 40px;
     text-align: center;
-
-    @include DESKTOP{
-      padding: vw(72px 0 85px);
-    }
-    @include TABLET{
-      padding: vw-t(68px 0 40px);
-    }
-    @include MOBILE{
-      padding: vw-m(39px 0 49px);
-    }
+    @include option(padding, 72 0 85, 68 0 40, 39 0 49);
   }
+
   &__bonus-title{
     @extend %H2;
     margin: 0;
-    @include NOT-MOBILE{
+    @include scroll-in{
       animation: fade-in-bottom 0.3s 2.3s ease-in-out both;
     }
   }
 
   &__bonus-text{
-    $m: 20px 0 76px;
-    $w: 400px;
-    @include NOT-MOBILE{
+    @include option(width, 400, 280);
+    @include option(margin, 20 0 76, 20 0 40);
+    @include scroll-in{
       animation: fade-in-bottom 0.3s 2.4s ease-in-out both;
-    }
-    @include DESKTOP{
-      width: vw($w);
-      margin: vw($m);
-    }
-    @include TABLET{
-      width: vw-t($w);
-      margin: vw-t($m);
-    }
-    @include MOBILE{
-      width: vw-m(280px);
-      margin: vw-m(20px 0 40px);
     }
   }
 
   &__video{
-    @include NOT-MOBILE{
+    @include scroll-in{
       animation: fade-in 1s 2.6s ease-in-out both;
     }
-    // @include DESKTOP{
-    //   margin-top: vw(76px);
-    // }
   }
 }

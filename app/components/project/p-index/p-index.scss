@@ -24,20 +24,11 @@
     text-align: center;
   }
   &__info-wrap{
-    $w: 458px;
     margin: auto;
-    $p: 50px 0 55px;
-    @include DESKTOP {
-      width: vw($w);
-      padding: vw($p);
-    }
-    @include TABLET {
-      width: vw-t($w);
-      padding: vw-t($p);
-    }
+    @include option(width, 458, auto);
+    @include option(padding, 50 0 55, 44 0 30);
     @include MOBILE {
       width: 70vw;
-      padding: vw-m(44px 0 30px);
     }
   }
 
@@ -53,97 +44,51 @@
   &__info-title{
     @extend %H2;
     margin: 0;
-    @include NOT-MOBILE{
+    @include scroll-in{
       animation: fade-in-bottom .3s both ease-in-out 0.1s;
     }
   }
 
   &__info-subtitle{
-    $mt:20px;
-    @include NOT-MOBILE{
+    @include option(margin-top, 20);
+    @include scroll-in{
       animation: fade-in-bottom .3s both ease-in-out 0.3s;
-    }
-    @include DESKTOP {
-      margin-top: vw($mt);
-    }
-    @include TABLET {
-      margin-top: vw-t($mt);
-    }
-    @include MOBILE {
-      margin-top: vw-m($mt);
     }
   }
 
   &__form{
     text-align: center;
-    @include DESKTOP {
-      padding: vw(57px 80px 66px);
-    }
-    @include TABLET {
-      padding: vw-t(57px 80px 66px);
-    }
+    @include option(padding, 57 80 66, 33 0 49);
     @include MOBILE {
       width: vw-m(280px);
       margin: auto;
-      padding: vw-m(33px 0 49px);
     }
   }
 
 
 
   &__form-text{
-    @include DESKTOP {
-      margin: vw(25px 0 52px);
-    }
-    @include TABLET {
-      margin: vw-t(25px 0 52px);
-    }
-    @include MOBILE {
-      margin: vw-m(10px 0 25px);
-    }
+    @include option(margin, 25 0 52, 10 0 25);
   }
 
   &__map{
     width: 100%;
     text-align: center;
     overflow: hidden;
-    @include DESKTOP {
-      padding: vw(57px 0 0);
-    }
-    @include TABLET {
-      padding: vw-t(57px 0 0);
-    }
-    @include MOBILE {
-      padding: vw-m(33px 0 49px);
-    }
+    @include option(padding, 57 0 0, 33 0 49);
     iframe{
       $h:350px;
       width: 100%;
-      // height: 100%;
-      @include DESKTOP {
-        height: vw($h);
-      }
-      @include TABLET {
-        height: vw-t($h);
-      }
-      @include MOBILE {
-        height: vw-m($h);
-      }
+      @include option(height, 350);
     }
   }
 
   &__map-title{
     @extend %FORM-TITLE;
     text-align: center;
-    @include NOT-MOBILE{
+    @include scroll-in{
       animation: fade-in-top .3s 3s ease-in-out both;
     }
-    margin-bottom: vw(25px);
-    @include TABLET {
-      margin-bottom: vw-t(25px);
-    }
-    @include MOBILE {
-      margin-bottom: vw-m(25px);
-    }
+    @include option(margin-bottom, 25);
   }
 }

@@ -76,6 +76,16 @@
   }
 }
 
+@mixin option($n, $v, $vm:$v, $vt:$v){
+  #{$n}:vw($v);
+  @include TABLET{
+    #{$n}:vw-t($vt);
+  }
+  @include MOBILE{
+    #{$n}:vw-m($vm);
+  }
+}
+
 @mixin scroll-in(){
   &.scroll_in{
     @content;
