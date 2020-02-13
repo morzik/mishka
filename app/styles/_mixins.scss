@@ -75,3 +75,9 @@
     animation: $name $delay + $duration linear 0s infinite both;
   }
 }
+
+@mixin scroll-in(){
+  &.scroll_in{
+    @content;
+  }
+}
