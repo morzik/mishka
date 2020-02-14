@@ -9,7 +9,7 @@ block header
           p
 
     if header.logo
-      a(href="#/")&attributes(header.logo.attr).custom-header__logo
+      a(href=base_url("/"))&attributes(header.logo.attr).custom-header__logo
         block logo
 
     if header.menu

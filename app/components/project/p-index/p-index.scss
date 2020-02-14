@@ -89,7 +89,7 @@
     @extend %FORM-TITLE;
     text-align: center;
     @include scroll-in{
-      animation: fade-in-top .3s .3s ease-in-out both;
+      animation: fade-in .3s .3s ease-in-out both;
       @include MOBILE{
         opacity: 1;
         animation-name: none;

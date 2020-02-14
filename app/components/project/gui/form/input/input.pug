@@ -16,7 +16,7 @@ mixin input(content, params)
   .input(class=`input_${content.type}`)&attributes(attributes)
     label.input__label
       +form-label(content).input__title
-      #{content.tag}.input__input&attributes(attr)
+      #{content.tag}.input__input(autofocus!=content.autofocus)&attributes(attr)
       if content.icon
         .input__input-icon
           img(src=content.icon)

@@ -1,6 +1,6 @@
 mixin intro-block(content, params)
-  .intro-block&attributes(attributes)
-    img(src="images/index/bg.jpg").intro-block__bg
+  .intro-block.parallax-block&attributes(attributes)
+    img(src="images/index/bg.jpg").intro-block__bg.parallax-block__img
     include welcome.svg
     .intro-block__line
       include bottom-line.svg

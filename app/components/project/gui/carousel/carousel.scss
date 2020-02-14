@@ -1,7 +1,5 @@
 @import "../../../../../node_modules/flickity/dist/flickity.css";
-//@import "../../../../../node_modules/flickity-fade/flickity-fade.css";
-//@import "../../../../../node_modules/slick-carousel/slick/slick.scss";
-//-@import "../../../../../node_modules/slick-carousel/slick/slick-theme.scss";
+
 .flickity {
   &-slider {
     display: flex;
@@ -19,14 +17,4 @@
   &__list {
     height: 100%;
   }
-  //.slick-dots {
-  //  display: inline-block;
-  //  [role="presentation"] {
-  //    display: inline-block;
-  //
-  //    &.slick-active {
-  //      color: #626200;
-  //    }
-  //  }
-  //}
 }

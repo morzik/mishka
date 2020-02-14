@@ -10,35 +10,20 @@
   justify-content: center;
 
   &__item{
-    $w: 48px;
-    $m: 0 3px;
+    @include option(width, 48);
+    @include option(height, 48);
+    @include option(margin, 0 3);
     cursor: pointer;
     background: $BLUE;
     transition: background .3s;
     &:hover{
-    background: #669ec0;
+      background: #669ec0;
     }
     &:active{
       background: #5496bd;
       svg{
         fill: rgba($WHITE,.3);
       }
-    }
-
-    @include DESKTOP{
-      width: vw($w);
-      height: vw($w);
-      margin: vw($m);
-    }
-    @include TABLET{
-      width: vw-t($w);
-      height: vw-t($w);
-      margin: vw-t($m);
-    }
-    @include MOBILE{
-      width: vw-m($w);
-      height: vw-m($w);
-      margin: vw-m($m);
     }
   }
 
@@ -57,6 +42,5 @@
       height: 50%;
       transition: fill .3s;
     }
-
   }
 }

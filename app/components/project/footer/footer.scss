@@ -18,18 +18,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  $h: 120px;
+  @include option(height, 120, 233);
 
-  @include DESKTOP{
-    height: vw($h);
-  }
-  @include TABLET{
-    height: vw-t($h);
-  }
   @include MOBILE{
-    height: vw-m(233px);
     flex-direction: column;
-    padding: vw-m(31px 0 29px);
+    padding: vw-m(30px 0);
     box-sizing: border-box;
   }
 
@@ -59,7 +52,7 @@
   }
 
   &__hatmlacademy-icon{
-    $w: 27px;
+    @include option(width, 27);
     transition: fill .3s;
     @include hov-htmlacademy {
       fill: $BLUE;
@@ -67,28 +60,9 @@
     @include act-htmlacademy {
       fill: #b2b2b2;
     }
-
-    @include DESKTOP{
-      width: vw($w);
-    }
-    @include TABLET{
-      width: vw-t($w);
-    }
-    @include MOBILE{
-      width: vw-m($w);
-    }
   }
 
   &__hatmlacademy-span{
-    $mr: 11px;
-    @include DESKTOP{
-      margin-right: vw($mr);
-    }
-    @include TABLET{
-      margin-right: vw-t($mr);
-    }
-    @include MOBILE{
-      margin-right: vw-m($mr);
-    }
+    @include option(margin-right, 11);
   }
 }

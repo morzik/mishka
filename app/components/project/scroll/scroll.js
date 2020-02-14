@@ -1,6 +1,5 @@
 import {registerPlugins, Plugin} from '../../framework/jquery/plugins/plugins.js';
 
-import TweenMax from 'gsap';
 import ScrollMagic from 'scrollmagic';
 
 class Scroll extends Plugin {
@@ -8,10 +7,13 @@ class Scroll extends Plugin {
     super($element);
 
     var controller = new ScrollMagic.Controller();
+
+
     $('.scroll').each(function(){
       var scene = new ScrollMagic.Scene({
         triggerElement: this,
-        triggerHook: 0.95
+        triggerHook: 0.98,
+        duration: "120%"
       })
         .setClassToggle(this, 'scroll_in')
         .addTo(controller);

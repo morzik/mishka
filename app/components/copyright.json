@@ -169,7 +169,8 @@
           {
             "title":"Имя:",
             "type":"simple",
-            "placeholder":"Ваше имя"
+            "placeholder":"Ваше имя",
+            "autofocus": "true"
           },
           {
             "title":"Фамилия:",

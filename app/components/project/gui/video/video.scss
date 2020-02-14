@@ -5,22 +5,13 @@
       @content;
     }
   }
-  @include DESKTOP{
-    width: vw(800px);
-    height: vw(500px);
-  }
-  @include TABLET{
-    width: vw-t(648px);
-    height: vw-t(499px);
-  }
+  @include option(width, 800, auto, 648);
+  @include option(height, 500, 200, 499);
   @include MOBILE{
     width: 100%;
-    height: vw-m(200px);
   }
-
   iframe{
     width: 100%;
     height: 100%;
   }
-
 }

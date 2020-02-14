@@ -16,7 +16,6 @@
   }
   position: relative;
   width: 100%;
-  background: $BLUE;
   color: $WHITE;
   @include scroll-in{
     animation: 1s ease-in-out both;
@@ -77,6 +76,10 @@
     $h: 256px;
     display: flex;
     flex-direction: row;
+    background: $BLUE;
+    @include mod(gray){
+      background: $GRAY;
+    }
     @include mod(right){
       @include NOT-MOBILE{
         flex-direction: row-reverse;
@@ -173,9 +176,10 @@
 
     img{
       position: absolute;
-      top: 50%;
+      top: 0;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
+      //z-index: -3;
 
       @include NOT-DESKTOP{
         height: 100%;

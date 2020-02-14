@@ -7,8 +7,8 @@ mixin fact(content, params)
           .fact__index &mdash; № #{content.index} &mdash;
           .fact__description!=content.description
         if content.image
-          .fact__image
-            img(src=content.image)
+          .fact__image.parallax-block
+            img(src=content.image).parallax-block__img
       if content.options
         .fact__options
           +pug-list(content.options, "fact__option").scroll

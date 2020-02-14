@@ -1,0 +1,10 @@
+.parallax-block {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("parallax-block", $mod){
+      @content;
+    }
+  }
+
+  position: relative;
+}

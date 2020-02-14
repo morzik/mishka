@@ -21,16 +21,10 @@
     }
   }
 
+  @include option(margin, 10 0, 5 0);
 
-  @include DESKTOP{
-    margin: vw(10px 0);
-  }
   @include TABLET{
     flex: 0 0 40%;
-    margin: vw-t(10px 0);
-  }
-  @include MOBILE{
-    margin: vw-m(5px 0);
   }
 
   &__wrap{
@@ -69,24 +63,9 @@
     border-radius: 5px;
     background: $BASE-BG;
     transition: background .3s;
-    $w: 57px;
-    $mr: 20px;
-
-    @include DESKTOP{
-      width: vw($w);
-      height: vw($w);
-      margin-right: vw($mr);
-    }
-    @include TABLET{
-      width: vw-t($w);
-      height: vw-t($w);
-      margin-right: vw-t($mr);
-    }
-    @include MOBILE{
-      width: vw-m(55px);
-      height: vw-m(55px);
-      margin-right: vw-m($mr);
-    }
+    @include option(width, 57, 55);
+    @include option(height, 57, 55);
+    @include option(margin-right, 20);
 
     @include radio(){
       border-radius: 50%;
@@ -95,7 +74,6 @@
     @include hover{
       background: #e5e5e5;
     }
-
 
     &::before {
       content: '';

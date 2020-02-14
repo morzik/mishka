@@ -6,8 +6,8 @@
     }
   }
   @extend %BUTTON;
-  $w: 485px;
-  $h: 58px;
+  @include option(width, 485, 280);
+  @include option(height, 58);
   padding: 0;
   border: none;
   background: $BLUE;
@@ -20,18 +20,5 @@
   &:active{
     background: #5496bd;
     color: rgba($WHITE,.3);
-  }
-
-  @include DESKTOP{
-    width: vw($w);
-    height: vw($h);
-  }
-  @include TABLET{
-    width: vw-t($w);
-    height: vw-t($h);
-  }
-  @include MOBILE{
-    width: vw-m(280px);
-    height: vw-m($h);
   }
 }

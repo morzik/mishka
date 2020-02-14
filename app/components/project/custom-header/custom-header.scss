@@ -17,7 +17,7 @@
     left: 0;
     top: 0;
     right: 0;
-    z-index: 1;
+    z-index: 3;
   }
 
   @include DESKTOP{
@@ -64,8 +64,6 @@
 
   &__burger {
     display: none;
-    // width: vw-m(23px);
-    // height: vw-m(21px);
     flex-direction: column;
     justify-content: space-between;
     margin: vw-m(20px);
@@ -73,7 +71,6 @@
     top: 0;
     right: 0;
     p{
-      // height: vw-m(3px);
       height: 3px;
       display: block;
       width: 100%;
@@ -91,7 +88,7 @@
     @include MOBILE(){
       display: flex;
       width: 23px;
-      height: 21px;
+      height: 20px;
       margin: 18px;
     }
     @include menu-visible(){

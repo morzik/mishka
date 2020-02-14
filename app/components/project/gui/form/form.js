@@ -6,8 +6,8 @@ import {api} from '../../../framework/api/api';
 import './input/input';
 import './checkbox/checkbox';
 import './radiogroup/radiogroup';
-import './select/select'
-import './select-date/select-date'
+// import './select/select'
+// import './select-date/select-date'
 
 // import {validate} from "../gui/error-text/error-text";
 

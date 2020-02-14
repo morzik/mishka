@@ -6,16 +6,7 @@
     }
   }
   width: 100%;
-  $h: 160px;
-  @include DESKTOP{
-    height: vw($h);
-  }
-  @include TABLET{
-    height: vw-t($h);
-  }
-  @include MOBILE{
-    height: vw-m($h);
-  }
+  @include option(height, 160);
 
   &__textarea{
     @extend %TEXTAREA;
@@ -26,14 +17,6 @@
     background: $BASE-BG;
     border: none;
     $p: 22px 21px;
-    @include DESKTOP{
-      padding: vw($p);
-    }
-    @include TABLET{
-      padding: vw-t($p);
-    }
-    @include MOBILE{
-      padding: vw-m($p);
-    }
+    @include option(padding, 22 21);
   }
 }

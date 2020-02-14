@@ -17,30 +17,22 @@
     }
   }
   position: relative;
+  @include option(margin, 10 0);
+  @include option(width, 400, auto, auto);
   @include DESKTOP{
-    width: vw(400px);
-    margin: vw(10px 0);
-
     &_email{
       width: vw(480px);
     }
   }
   @include TABLET{
-    width: 100%;
-    margin: vw-t(10px 0);
-
     &_simple{
       width: vw-t(267px);
     }
-  }
-  @include MOBILE{
-    margin: vw-m(10px 0);
   }
 
   &__label {
     position: relative;
     display: flex;
-    align-items: center;
     flex-direction: column;
     align-items: flex-start;
     @include mod(simple){
@@ -55,9 +47,6 @@
 
 
   &__input {
-
-    $p: 0 22px;
-    $p-em: 0 75px 0 22px;
     @extend %INPUT;
     display: block;
     background: $BASE-BG;
@@ -66,24 +55,9 @@
     box-sizing: border-box;
     width: 100%;
     transition: background .3s;
-
-    @include DESKTOP{
-      padding: vw($p-em);
-      @include mod(simple){
-        padding: vw($p);
-      }
-    }
-    @include TABLET{
-      padding: vw-t($p-em);
-      @include mod(simple){
-        padding: vw-t($p);
-      }
-    }
-    @include MOBILE{
-      padding: vw-m($p-em);
-      @include mod(simple){
-        padding: vw-m($p);
-      }
+    @include option(padding, 0 75 0 22);
+    @include mod(simple){
+      @include option(padding, 0 22);
     }
 
     @include hover{
@@ -106,18 +80,8 @@
     align-items: center;
     justify-content: center;
     $w: 56px;
-    @include DESKTOP{
-      width: vw($w);
-      height: vw($w);
-    }
-    @include TABLET{
-      width: vw-t(56px);
-      height: vw-t(56px);
-    }
-    @include MOBILE{
-      width: vw-m(53px);
-      height: vw-m(53px);
-    }
+    @include option(width, 56,53);
+    @include option(height, 56,53);
 
     img{
       width: 32%;
@@ -130,22 +94,10 @@
   &__title{
     white-space: nowrap;
     $p: 0 18px 0 0;
-    @include DESKTOP{
-      padding: vw($p);
-    }
-    @include TABLET{
-      padding: vw-t(0 18px 15px);
-    }
-    @include MOBILE{
-      padding: vw-m(0 18px 12px);
-    }
+    @include option(padding, 0 18 0 0, 0 18 12, 0 18 15);
+
     @include mod(simple){
-      @include TABLET{
-        padding: vw-t($p);
-      }
-      @include MOBILE{
-        padding: vw-m($p);
-      }
+      @include option(padding, 0 18 0 0);
     }
   }
 
