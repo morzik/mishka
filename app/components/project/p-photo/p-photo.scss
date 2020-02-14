@@ -37,13 +37,13 @@
     @extend %H2;
     margin: 0;
     @include scroll-in{
-      animation: fade-in-bottom .3s both 0.1s;
+      animation: fade-in-bottom .3s both ;
     }
   }
   &__info-text{
     @include option(margin-top, 20px);
     @include scroll-in{
-      animation: fade-in-bottom .3s both 0.2s;
+      animation: fade-in-bottom .3s both ;
     }
   }
   &__gallery{
@@ -61,8 +61,13 @@
 
   &__item{
     position: relative;
-    @include NOT-MOBILE{
-      animation: fade-in-left 1s .3s ease-in-out both;
+    @include scroll-in{
+      animation: fade-in-left 1s ease-in-out both;
+
+      @include MOBILE{
+        animation-name: fade-in-bottom;
+        animation-duration: 0.3s;
+      }
     }
     @include DESKTOP{
       flex: 1 1 33%;
@@ -85,11 +90,7 @@
     }
 
     @include scroll-in{
-      @for $i from 1 through 4{
-        &:nth-of-type(#{$i}){
-          animation: fade-in-left 1s 0.5s*$i ease-in-out both;
-        }
-      }
+      animation: fade-in-left 1s ease-in-out both;
     }
   }
 
@@ -190,7 +191,7 @@
     @extend %H2;
     margin: 0;
     @include scroll-in{
-      animation: fade-in-bottom 0.3s 2.3s ease-in-out both;
+      animation: fade-in-bottom 0.3s ease-in-out both;
     }
   }
 
@@ -198,13 +199,13 @@
     @include option(width, 400, 280);
     @include option(margin, 20 0 76, 20 0 40);
     @include scroll-in{
-      animation: fade-in-bottom 0.3s 2.4s ease-in-out both;
+      animation: fade-in-bottom 0.3s ease-in-out both;
     }
   }
 
   &__video{
     @include scroll-in{
-      animation: fade-in 1s 2.6s ease-in-out both;
+      animation: fade-in 1s ease-in-out both;
     }
   }
 }

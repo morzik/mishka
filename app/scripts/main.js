@@ -1,6 +1,8 @@
 import '../components/project/project';
 
 import $ from 'jquery';
+// import {TweenMax} from 'gsap';
+// import ScrollMagic from 'scrollmagic';
 
 global.jQuery = global.$ = $;
 

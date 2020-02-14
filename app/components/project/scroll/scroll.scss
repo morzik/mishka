@@ -1,0 +1,9 @@
+.scroll {
+  // Константы
+  @mixin mod($mod) {
+    @include modifier("scroll", $mod){
+      @content;
+    }
+  }
+  opacity: 0;
+}

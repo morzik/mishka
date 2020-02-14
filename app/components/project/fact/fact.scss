@@ -18,29 +18,37 @@
   width: 100%;
   background: $BLUE;
   color: $WHITE;
-  animation: 1s ease-in-out both;
+  @include scroll-in{
+    animation: 1s ease-in-out both;
+  }
 
   @include mod(gray){
     background: $GRAY;
     color: $BLACK;
   }
 
-  @for $i from 1 through 5{
-    &:nth-of-type(#{$i}){
-      animation-delay: .5s*$i;
+  &_left.scroll_in{
+    animation-name: fade-in-left;
+    @include MOBILE{
+      animation-name: fade-in-bottom;
     }
   }
-
-  &_left{
-    animation-name: fade-in-left;
-  }
-  &_right{
+  &_right.scroll_in{
     animation-name: fade-in-right;
+    @include MOBILE{
+      animation-name: fade-in-bottom;
+    }
   }
 
   &_gray{
     flex: 1 1 30%;
-    animation-name: fade-in-top;
+
+    &.scroll_in{
+      animation-name: fade-in-top;
+      @include MOBILE{
+        animation-name: fade-in-bottom;
+      }
+    }
 
     @include MOBILE{
       &:after{
@@ -181,12 +189,7 @@
     display: flex;
     overflow: hidden;
     $h: 330px;
-    @include DESKTOP{
-      height: vw($h);
-    }
-    @include TABLET{
-      height: vw-t($h);
-    }
+    @include option(height, 330, auto);
     @include MOBILE{
       background: $WHITE;
       padding: vw-m(20px 0);
@@ -211,10 +214,14 @@
     color: $BLACK;
 
     @include scroll-in{
+      animation: fade-in-top 0.5s ease-in-out both;
       @for $i from 1 through 3{
         &:nth-of-type(#{$i}){
-          animation: fade-in-top 0.5s 1s+0.2s*$i ease-in-out both;
+          animation-delay: 0.2s*$i;
         }
+      }
+      @include MOBILE{
+        animation-name: fade-in-bottom;
       }
     }
 
@@ -234,10 +241,10 @@
         content: '';
         clear: both;
         display: block;
-        width: 0px;
-        height: 0px;
+        width: 0;
+        height: 0;
         position: absolute;
-        border: 0px solid $BLUE;
+        border: 0 solid $BLUE;
         transition: width .3s, height .3s .3s,;
         pointer-events: none;
       }
@@ -269,8 +276,9 @@
         }
       }
     }
-
   }
+
+
   &__option-info{
     width: 60%;
     margin: 0 auto;

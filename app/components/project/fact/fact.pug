@@ -11,7 +11,7 @@ mixin fact(content, params)
             img(src=content.image)
       if content.options
         .fact__options
-          +pug-list(content.options, "fact__option")
+          +pug-list(content.options, "fact__option").scroll
 
 mixin fact__option(content, params)
   .fact__option&attributes(attributes)

@@ -29,6 +29,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    overflow: hidden;
     @include option(padding, 0 97, 0, 0 60);
     @include MOBILE{
       flex-direction: column;
@@ -40,17 +41,17 @@
     @extend %FORM-TITLE;
     width: 100%;
     $m: 25px 0;
-    @include scroll-in{
-      animation: fade-in-bottom .3s both ease-in-out 0.1s;
-    }
     @include option(margin, 25 0, 41px 0 30px);
+    @include scroll-in{
+      animation: fade-in-bottom .3s both ease-in-out;
+    }
   }
 
   &__text{
     width: 100%;
     text-align: center;
     @include scroll-in{
-      animation: fade-in-bottom .3s both ease-in-out 0.3s;
+      animation: fade-in-bottom .3s both ease-in-out;
     }
 
     @include MOBILE{
@@ -65,11 +66,7 @@
     margin: 0;
     box-sizing: border-box;
     @include scroll-in{
-      @for $i from 1 through 5{
-        &:nth-of-type(#{$i}){
-          animation: fade-in-bottom 1s 0.5s*$i ease-in-out both;
-        }
-      }
+      animation: fade-in-bottom 1s .1s ease-in-out both;
     }
 
     &_small{
@@ -105,21 +102,10 @@
       margin: vw-m(20px 0);
     }
     @include item-mod(big){
-      //@include option();
-      @include DESKTOP{
-        margin: vw(40px 0);
-      }
-      @include TABLET{
-        margin: vw-t(40px 0);
-      }
+      @include option(margin, 40 0, 20 0);
     }
     @include item-mod(small){
-      @include DESKTOP{
-        margin: vw(0 0 50px);
-      }
-      @include TABLET{
-        margin: vw-t(0 0 50px);
-      }
+      @include option(margin, 0 0 50, 20 0);
     }
 
     &:before{
@@ -148,20 +134,11 @@
     }
 
     @include item-mod(big){
-      @include DESKTOP{
-        span{
-          width: vw(400px);
-          padding: vw(0 40px);
-        }
-        &:before{
-          display: block;
-        }
+      span{
+        @include option(width, 400px, auto);
+        @include option(padding, 0 40, 0);
       }
-      @include TABLET{
-        span{
-          width: vw-t(400px);
-          padding: vw-t(0 40px);
-        }
+      @include NOT-MOBILE{
         &:before{
           display: block;
         }
@@ -196,16 +173,10 @@
   }
 
   &__button{
-    margin: auto;
-    @include DESKTOP{
-      margin: vw(58px 0 66px);
-    }
-    @include TABLET{
-      width: vw-t(324px);
-      margin: vw-t(51px auto 40px);
-    }
-    @include MOBILE{
-      margin: vw-m(51px auto 40px);
+    @include option(margin, 58 0 66, 51 auto 40, 51 auto 40);
+
+    @include scroll-in{
+      animation: fade-in-bottom 1s .1s ease-in-out forwards;
     }
   }
 }

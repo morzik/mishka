@@ -1,14 +1,14 @@
 mixin p-form(content, params)
   .p-form(id=content.id data-id=content.id)&attributes(attributes)
     .p-form__info
-      h2.p-form__title!=content.title
-      .p-form__text!=content.text
+      h2.p-form__title.scroll!=content.title
+      .p-form__text.scroll!=content.text
     +p-form__form(content)
 
 mixin p-form__form(content, params)
   form.p-form__form&attributes(attributes)
-    +pug-list(content.list, "p-form__item")
-    +button.p-form__button отправить отзыв
+    +pug-list(content.list, "p-form__item").scroll
+    +button.p-form__button.scroll отправить отзыв
 
 mixin p-form__item(content, params)
   .p-form__item(class=`p-form__item_${content.size} p-form__item_${content.class}`)&attributes(attributes)

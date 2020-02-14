@@ -2,13 +2,13 @@ mixin p-photo(content, params)
   .p-photo(id=content.id data-id=content.id)&attributes(attributes)
     +p-photo__info(content.info)
     .p-photo__gallery
-      +pug-list(content.gallery, "p-photo__item")
+      +pug-list(content.gallery, "p-photo__item").scroll
     +p-photo__bonus(content.bonus)
 
 mixin p-photo__info(content, params)
   .p-photo__info&attributes(attributes)
-    h2.p-photo__info-title!=content.title
-    .p-photo__info-text!=content.text
+    h2.p-photo__info-title.scroll!=content.title
+    .p-photo__info-text.scroll!=content.text
 
 mixin p-photo__item(content, params)
   .p-photo__item(class=`p-photo__item_${content.class}`)&attributes(attributes)
@@ -24,6 +24,6 @@ mixin p-photo__item(content, params)
 
 mixin p-photo__bonus(content, params)
   .p-photo__bonus&attributes(attributes)
-    h2.p-photo__bonus-title!=content.title
-    .p-photo__bonus-text!=content.text
-    +video(content.video).p-photo__video
+    h2.p-photo__bonus-title.scroll!=content.title
+    .p-photo__bonus-text.scroll!=content.text
+    +video(content.video).p-photo__video.scroll
